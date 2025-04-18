@@ -1,0 +1,178 @@
+.main {
+  .content {
+    position: relative;
+    height: 100vh;
+    color: var(--black);
+    font-size: 0;
+
+    &_hero {
+      background-color: var(--black);
+    }
+    &_company {
+      background: url(../img/bg_company.jpg) no-repeat center / cover;
+    }
+    &_buisness {
+      background-color: #3498db;
+    }
+    &_recruit {
+      background-color: #9b59b6;
+    }
+  }
+
+  .hero {
+    &_content {
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat; 
+
+      &-first {
+        background-image: url(../img/bg_hero_1.jpg);
+      }
+      &-second {
+        background-image: url(../img/bg_hero_2.jpg);
+      }
+      &-third {
+        background-image: url(../img/bg_hero_3.jpg);
+      }
+    }
+
+    .wrap_title {
+      position: relative;
+      width: 734px;
+      margin: 0 auto;
+      color: var(--white);
+
+      &::before {
+        opacity: 0;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: -54px;
+        width: 4px;
+        height: 100%;
+        background-color: var(--skyblue);
+        transform: translateY(20px);
+        content: "";
+        transition: opacity 1s ease-in-out 1s, transform 1s ease-in-out 1s;
+      }
+
+      .title {
+        opacity: 0;
+        font-size: 3.5rem;
+        font-weight: 900;
+        line-height: 1;
+        transform: translateY(30px);
+        transition: opacity 1s ease-in-out 0.5s, transform 1s ease-in-out 0.5s;
+      }
+      .description {
+        opacity: 0;
+        margin-top: 15px;
+        color: var(--white-op80);
+        font-size: 1.5rem;
+        transform: translateY(30px);
+        transition: opacity 1s ease-in-out 0.7s, transform 1s ease-in-out 0.7s;
+      }
+    }
+
+    .swiper-slide-active {
+      .wrap_title {
+        &::before {
+          opacity: 1;
+          transform: translateY(0);
+        }
+
+        .title {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        .description {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    }
+
+    // Swiper Progressbar Custom
+    .control {
+      display: flex;
+      align-items: center;
+      position: absolute;
+      left: 50%;
+      bottom: 120px;
+      transform: translateX(-50%);
+      z-index: 20;
+
+      .swiper-pagination {
+        display: flex;
+        justify-content: space-between;
+        text-align: left;
+        
+        .number-page {
+          position: absolute;
+          top: 0;
+          color: var(--white);
+          font-size: 1.5rem;
+          font-weight: 700;
+          line-height: 1;
+          transform: translateY(-40%);
+
+          &.current {
+            left: -40px;
+          }
+          &.total {
+            right: -40px;
+          }
+        }
+      } 
+      .swiper-button-next,
+      .swiper-button-prev {
+        width: 32px;
+        height: 32px;
+        background-image: url(../img/icon_arrow_slider.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        cursor: pointer;
+      }
+      .swiper-button-next {
+        margin-left: 10px;
+        transform: rotateY(180deg);
+      }
+    }
+    .box_progress {
+      position: relative;
+    }
+    .autoplay-progress {
+      width: 200px;
+      height: 4px;
+      background-color: var(--white-op20);
+    }
+    .autoplay-progress svg {
+      --progress: 0;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      stroke-width: 4px;
+      stroke: #fff;
+      fill: none;
+      stroke-dashoffset: calc(100 * (1 - var(--progress)));
+      stroke-dasharray: 100;
+    }
+    .box_arrow {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: 50px;
+    }
+  }
+}
+
+.drawer {
+  display: none;
+}
