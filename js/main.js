@@ -1,4 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
+  gsap.registerPlugin(ScrollTrigger);
+
+  const header = document.querySelector('.header');
   const navItems = document.querySelectorAll('.gnav_list > li');
 
   navItems.forEach((item) => {
@@ -39,6 +42,39 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 100);
       });
     }
+  });
+
+  // Header color change on scroll
+  // ScrollTrigger.create({
+  //   trigger: '.content_buisness',
+  //   start: `top top+=90`,
+  //   end: `bottom top+=90`,
+  //   onEnter: () => header.classList.add('is-active'),
+  //   onEnterBack: () => header.classList.add('is-active'),
+  //   onLeave: () => header.classList.remove('is-active'),
+  //   onLeaveBack: () => header.classList.remove('is-active'),
+  //   markers: true
+  // });
+
+  // Scroll to top button
+  const scrollBtn = document.getElementById('scrollTopBtn');
+  const aside = document.querySelector('.scroll_top');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      aside.classList.add('visible');
+      aside.setAttribute('aria-hidden', 'false');
+    } else {
+      aside.classList.remove('visible');
+      aside.setAttribute('aria-hidden', 'true');
+    }
+  });
+
+  scrollBtn.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
   });
 });
 
