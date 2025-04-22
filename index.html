@@ -20,7 +20,7 @@
       <!-- Header -->
       <header id="header" class="header">
         <div class="header_inner">
-          <h1 class="logo"><a href="#main">ZOOM<br>SYSTEM</a></h1>
+          <h1 class="logo"><a href="#main">ZOOM SYSTEM</a></h1>
           <nav class="gnav">
             <ul class="gnav_list">
               <li>
@@ -47,36 +47,51 @@
             </ul>
           </nav>
           <button type="button" class="btn_lang"><span>JPN</span></button>
-          <button type="button" class="btn_hamburger"><span class="blind">Open Menu</span></button>
+          <!-- btn_hamburger is for mobile -->
+          <button type="button" class="btn_hamburger" aria-label="Menu" aria-controls="drawer">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </button>
         </div>
       </header>
       <!-- //Header -->
       
       <!-- Drawer : Only for Mobile -->
       <div class="drawer" id="drawer">
+        <div class="area_top">
+          <button type="button" class="btn_lang"><span>JPN</span></button>
+          <button type="button" class="btn_close"><span class="blind">Close drawer</span></button>
+        </div>
         <nav class="mnav">
           <ul class="mnav_list">
             <li>
-              <a href="/page.php?p_id=company" target="_self">COMPANY</a>
+              <a href="/page.php?p_id=company" class="mnav_title" target="_self">COMPANY</a>
               <ul class="mnav_sublist">
                 <li><a href="#about">ABOUT US</a></li>
-                <li><a href="#three">THREE<br>PHILOSOPHIES</a></li>
+                <li><a href="#three">THREE PHILOSOPHIES</a></li>
                 <li><a href="#ceo">CEO MESSAGE</a></li> 
                 <li><a href="#prof">COMPANY PROF.</a></li>
                 <li><a href="#access">ACCESS</a></li>
               </ul>
             </li> 
             <li>
-              <a href="/page.php?p_id=buisness" target="_self">BUISNESS</a>
+              <a href="/page.php?p_id=buisness" class="mnav_title" target="_self">BUISNESS</a>
               <ul class="mnav_sublist">
                 <li><a href="#our">OUR BUSINESS</a></li>
-                <li><a href="#competitive">COMPETITIVE<br>EDGE</a></li>
-                <li><a href="#performance">PERFORMANCE<br>OVERVIEW</a></li>
+                <li><a href="#competitive">COMPETITIVE EDGE</a></li>
+                <li><a href="#performance">PERFORMANCE OVERVIEW</a></li>
               </ul>
             </li>
-            <li><a href="/page.php?p_id=news" target="_self">NEWS</a></li> 
-            <li><a href="/page.php?p_id=recruit" target="_self">RECRUIT</a></li>
-            <li><a href="/page.php?p_id=contact" target="_self">CONTACT</a></li>
+            <li><a href="/page.php?p_id=news" class="mnav_title" target="_self">NEWS</a></li> 
+            <li>
+              <a href="/page.php?p_id=recruit" class="mnav_title" target="_self">RECRUIT</a>
+              <ul class="mnav_sublist">
+                <li><a href="#newHires">新卒採用</a></li>
+                <li><a href="#exHires">キャリア採用</a></li>
+              </ul>
+            </li>
+            <li><a href="/page.php?p_id=contact" class="mnav_title" target="_self">CONTACT</a></li>
           </ul>
         </nav>
       </div>
@@ -203,15 +218,19 @@
             <ul class="list_link">
               <li>
                 <div class="icon icon_prof"><span class="blind">prof icon</span></div>
-                <h3 class="link_title">採用案内</h3>
-                <p class="link_description">変革と挑戦を推進し、ともに<br>未来を創る人材を募集<br>しています</p>
-                <a href="#recruit" class="link_more"><span class="link_more_title">MORE VIEW</span></a>
+                <div class="box_items">
+                  <h3 class="link_title">採用案内</h3>
+                  <p class="link_description">変革と挑戦を推進し、ともに<br>未来を創る人材を募集<br>しています</p>
+                  <a href="#recruit" class="link_more"><span class="link_more_title">MORE VIEW</span></a>
+                </div>
               </li>
               <li>
                 <div class="icon icon_memo"><span class="blind">memo icon</span></div>
-                <h3 class="link_title">採用情報</h3>
-                <p class="link_description">優秀な人材を採用するために、段階的なプロセスを通じて<br>選考を行っています。</p>
-                <a href="#recruit" class="link_more"><span class="link_more_title">MORE VIEW</span></a>
+                <div class="box_items">
+                  <h3 class="link_title">採用情報</h3>
+                  <p class="link_description">優秀な人材を採用するために、段階的なプロセスを通じて<br>選考を行っています。</p>
+                  <a href="#recruit" class="link_more"><span class="link_more_title">MORE VIEW</span></a>
+                </div>
               </li>
             </ul>
           </div>
@@ -253,7 +272,7 @@
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
   <script src="js/main.js"></script>
-  <script src="js/scroll.js"></script>
+  <script src="js/utils.js"></script>
   <script>
     const progressLine = document.querySelector('.autoplay-progress svg')
     const mainSwiper = new Swiper(".hero-swiper", {
@@ -264,7 +283,6 @@
         disableOnInteraction: false,
       },
 
-      // bullet
       pagination: {
         el: ".hero-swiper .swiper-pagination",
         clickable: false,
@@ -276,7 +294,6 @@
         }
       },
 
-      //arrow
       navigation: {
         nextEl: ".hero-swiper .swiper-button-next",
         prevEl: ".hero-swiper .swiper-button-prev",

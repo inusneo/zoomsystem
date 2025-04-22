@@ -22,7 +22,28 @@ $(document).ready(function () {
     }
   }
 
-  // 초기 실행 + 이벤트 등록
+  // Hamburger menu
+  $('.btn_hamburger').click(function () {
+    const $menu = $('#drawer');
+    const $dim = $('#dimmed');
+
+    const isActive = $menu.hasClass('is-active');
+
+    if (!isActive) {
+      $menu.removeClass('is-out').addClass('is-active');
+      $dim.fadeIn(200);
+    }
+  });
+
+  $('#dimmed, #drawer .btn_close').click(function () {
+    $('#drawer').removeClass('is-active').addClass('is-out');
+    $('#dimmed').fadeOut(200);
+
+    setTimeout(() => {
+      $('#drawer').removeClass('is-out');
+    }, 300);
+  });
+
   checkHeaderOverlap();
   $window.on('scroll resize', checkHeaderOverlap);
 });

@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   gsap.registerPlugin(ScrollTrigger);
 
-  const header = document.querySelector('.header');
   const navItems = document.querySelectorAll('.gnav_list > li');
 
   navItems.forEach((item) => {
@@ -43,18 +42,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
   });
-
-  // Header color change on scroll
-  // ScrollTrigger.create({
-  //   trigger: '.content_buisness',
-  //   start: `top top+=90`,
-  //   end: `bottom top+=90`,
-  //   onEnter: () => header.classList.add('is-active'),
-  //   onEnterBack: () => header.classList.add('is-active'),
-  //   onLeave: () => header.classList.remove('is-active'),
-  //   onLeaveBack: () => header.classList.remove('is-active'),
-  //   markers: true
-  // });
 
   // Scroll to top button
   const scrollBtn = document.getElementById('scrollTopBtn');
