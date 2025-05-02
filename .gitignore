@@ -1,0 +1,5 @@
+*.map
+*.log
+*.tmp
+*.pyc
+/node_modules/

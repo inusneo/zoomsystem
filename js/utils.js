@@ -1,21 +1,32 @@
 $(document).ready(function () {
   const $window = $(window);
   const $header = $('#header');
-  const $sectionBiz = $('.content_buisness');
+  const $sectionBiz = $('.content_business');
+  const $contentSub = $('.content-sub');
 
   function checkHeaderOverlap() {
     const scrollTop = $window.scrollTop();
     const headerHeight = $header.outerHeight();
 
-    const sectionBizTop = $sectionBiz.offset().top;
-    const sectionBizBottom = sectionBizTop + $sectionBiz.outerHeight();
+    let isPastTopVisual = false;
+    let isOverlappingBiz = false;
 
-    const headerBottom = scrollTop + headerHeight;
-    const headerTop = scrollTop;
+    if ($contentSub.length > 0) {
+      const visualTop = $contentSub.offset().top;
+      isPastTopVisual = scrollTop >= visualTop;
+    }
 
-    const isOverlapping = headerBottom > sectionBizTop && headerTop < sectionBizBottom;
+    if ($sectionBiz.length > 0) {
+      const sectionBizTop = $sectionBiz.offset().top;
+      const sectionBizBottom = sectionBizTop + $sectionBiz.outerHeight();
 
-    if (isOverlapping) {
+      const headerTop = scrollTop;
+      const headerBottom = scrollTop + headerHeight;
+
+      isOverlappingBiz = headerBottom > sectionBizTop && headerTop < sectionBizBottom;
+    }
+
+    if (isPastTopVisual || isOverlappingBiz) {
       $header.addClass('is-active');
     } else {
       $header.removeClass('is-active');

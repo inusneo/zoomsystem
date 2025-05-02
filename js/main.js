@@ -1,6 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-  gsap.registerPlugin(ScrollTrigger);
-
   const navItems = document.querySelectorAll('.gnav_list > li');
 
   navItems.forEach((item) => {
