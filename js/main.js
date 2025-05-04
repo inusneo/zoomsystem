@@ -48,10 +48,8 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', () => {
     if (window.scrollY > 300) {
       aside.classList.add('visible');
-      aside.setAttribute('aria-hidden', 'false');
     } else {
       aside.classList.remove('visible');
-      aside.setAttribute('aria-hidden', 'true');
     }
   });
 

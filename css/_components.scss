@@ -83,6 +83,20 @@
   }
 }
 
+.box-btn {
+  text-align: center;
+}
+.btn {
+  &-square {
+    width: 400px;
+    height: 80px;
+    background-color: var(--skyblue);
+    color: var(--white);
+    font-size: 1.25rem;
+    font-weight: 700;
+  }
+}
+
 .color {
   &_point {
     color: var(--skyblue);
@@ -99,17 +113,17 @@
   padding: 30px 40px;
   background-color: var(--white);
   transform: translateX(100%);
-  transition: opacity 0.3s;
+  transition: opacity 0.2s;
   z-index: #{map-get($z-indexes, drawer)};
   overflow-y: auto;
   pointer-events: none;
 
   &.is-active {
-    animation: slideIn 0.3s forwards;
+    animation: slideIn 0.2s forwards;
     pointer-events: auto;
   }
   &.is-out {
-    animation: slideOut 0.3s forwards;
+    animation: slideOut 0.2s forwards;
   }
 
   .btn_lang {

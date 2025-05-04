@@ -33,6 +33,17 @@ $(document).ready(function () {
     }
   }
 
+  // Sub menu active
+  $('.gnav-sub_list > li').click(function () {
+    const $subMenu = $(this);
+    const isActive = $subMenu.hasClass('is-active');
+
+    if (!isActive) {
+      $subMenu.addClass('is-active');
+      $subMenu.siblings().removeClass('is-active');
+    } 
+  });
+
   // Hamburger menu
   $('.btn_hamburger').click(function () {
     const $menu = $('#drawer');
@@ -52,7 +63,7 @@ $(document).ready(function () {
 
     setTimeout(() => {
       $('#drawer').removeClass('is-out');
-    }, 300);
+    }, 200);
   });
 
   checkHeaderOverlap();
