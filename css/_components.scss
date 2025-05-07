@@ -36,6 +36,29 @@
   }
 }
 
+.icon-100 {
+  flex: 0 0 100px;
+  display: block;
+  width: 100px;
+  height: 100px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  &-system {
+    background-image: url(../img/icon_100_system.svg);
+  }
+  &-search {
+    background-image: url(../img/icon_100_search.svg);
+  }
+  &-skill {
+    background-image: url(../img/icon_100_skill.svg);
+  }
+  &-graph {
+    background-image: url(../img/icon_100_graph.svg);
+  }
+}
+
 .box_plus {
   display: flex;
   align-items: center;
@@ -218,6 +241,11 @@
   }
 }
 
+@media screen and (min-width:768px) and (max-width:1139px) {
+  .box-btn {
+    margin-top: 30px;
+  }
+}
 /* 모바일 가로, 모바일 세로 (해상도 767px 이하) */ 
 @media screen and (max-width:767px) {
   .drawer {
@@ -264,6 +292,11 @@
       background-image: url(../img/icon_memo_mb.svg);
     }
   }
+  .icon-100 {
+    flex: 0 0 50px;
+    width: 50px;
+    height: 50px;
+  }
   .box_plus {
     width: 40px;
     height: 40px;
@@ -280,5 +313,13 @@
         height: 10px;
       }
     }
+  }
+  .box-btn {
+    margin-top: 20px;
+  }
+  .btn-square {
+    width: 200px;
+    height: 50px;
+    font-size: 1rem;
   }
 }

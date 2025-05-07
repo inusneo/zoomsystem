@@ -312,7 +312,7 @@ p::selection {
     margin-top: 15px;
     color: var(--white-op70);
 
-    > dt {
+    > li {
       position: relative;
 
       &:not(:first-child)::before {
@@ -322,7 +322,7 @@ p::selection {
       }
     }
     a {
-      display: block;
+      display: inline-block;
       margin-left: 10px;
       color: var(--white-op70);
     }
@@ -492,12 +492,13 @@ p::selection {
     &_logo {
       font-size: 1.13rem;
     }
+
     .list_connect {
       flex-wrap: wrap;
       margin-top: 10px;
       font-size: 0.81rem;
 
-      dt:not(:first-child)::before {
+      li:not(:first-child)::before {
         margin: 0 5px;
       }
       a {
@@ -519,5 +520,9 @@ p::selection {
     right: 30px;
     bottom: 30px;
     transform: initial;
+  }
+  .scroll_top_btn {
+    width: 40px;
+    height: 40px;
   }
 }
