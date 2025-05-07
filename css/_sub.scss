@@ -626,11 +626,19 @@ input[type=file]::file-selector-button {
   &.is-complete {
     input[type="checkbox"] {
       + .label-terms {
+        &:hover {
+          &::before {
+            border: 1px solid var(--gray-medium);
+          }
+        }
         &::before {
           background-color: var(--gray-bright);
           background-image: url(../img/icon_checked_disabled.svg);
         }
       }
+    }
+    .label-terms {
+      cursor: default;
     }
   }
 
@@ -658,7 +666,14 @@ input[type=file]::file-selector-button {
     align-items: center;
     font-size: 1.25rem;
     line-height: 24px;
+    cursor: pointer;
 
+    &:hover {
+      &::before {
+        border-color: var(--skyblue);
+        border-width: 2px;
+      }
+    }
     &::before {
       display: block;
       width: 24px;
@@ -668,6 +683,7 @@ input[type=file]::file-selector-button {
       background-position: center;
       background-size: cover;
       border: 1px solid var(--gray-medium);
+      box-sizing: border-box;
       content: "";
     }
   }
@@ -1427,10 +1443,10 @@ input[type=file]::file-selector-button {
         }
       }
       &::before {
-        right: -1.8rem;
+        right: -1.7rem;
       }
       &::after {
-        right: -1.6rem;
+        right: -1.5rem;
       }
     }
   }

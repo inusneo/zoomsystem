@@ -753,8 +753,21 @@ p::selection {
   background-color: var(--skyblue);
 }
 
+form + .box-btn {
+  margin-top: 50px;
+}
+
 .box-btn {
   text-align: center;
+}
+.box-btn-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.box-btn-flex .btn-square {
+  width: 300px;
 }
 
 .btn-square {
@@ -946,6 +959,12 @@ p::selection {
   }
   .box-btn {
     margin-top: 20px;
+  }
+  .box-btn-flex {
+    gap: 10px;
+  }
+  .box-btn-flex .btn-square {
+    width: 155px;
   }
   .btn-square {
     width: 200px;
@@ -2130,9 +2149,15 @@ input[type=file]::file-selector-button:hover {
   align-items: center;
   font-size: 0;
 }
+.input-checkbox.is-complete input[type=checkbox] + .label-terms:hover::before {
+  border: 1px solid var(--gray-medium);
+}
 .input-checkbox.is-complete input[type=checkbox] + .label-terms::before {
   background-color: var(--gray-bright);
   background-image: url(../img/icon_checked_disabled.svg);
+}
+.input-checkbox.is-complete .label-terms {
+  cursor: default;
 }
 .input-checkbox input[type=checkbox] {
   overflow: hidden;
@@ -2154,6 +2179,11 @@ input[type=file]::file-selector-button:hover {
   align-items: center;
   font-size: 1.25rem;
   line-height: 24px;
+  cursor: pointer;
+}
+.input-checkbox .label-terms:hover::before {
+  border-color: var(--skyblue);
+  border-width: 2px;
 }
 .input-checkbox .label-terms::before {
   display: block;
@@ -2164,6 +2194,7 @@ input[type=file]::file-selector-button:hover {
   background-position: center;
   background-size: cover;
   border: 1px solid var(--gray-medium);
+  box-sizing: border-box;
   content: "";
 }
 
@@ -2776,10 +2807,10 @@ input[type=file]::file-selector-button:hover {
     padding-left: 15px;
   }
   .progress_item::before {
-    right: -1.8rem;
+    right: -1.7rem;
   }
   .progress_item::after {
-    right: -1.6rem;
+    right: -1.5rem;
   }
   .area-input .box-text {
     margin-top: 10px;

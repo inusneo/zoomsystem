@@ -106,8 +106,22 @@
   }
 }
 
+form + .box-btn {
+  margin-top: 50px;
+}
 .box-btn {
   text-align: center;
+
+  &-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    .btn-square {
+      width: 300px;
+    }
+  }
 }
 .btn {
   &-square {
@@ -316,6 +330,14 @@
   }
   .box-btn {
     margin-top: 20px;
+
+    &-flex {
+      gap: 10px;
+  
+      .btn-square {
+        width: 155px;
+      }
+    }
   }
   .btn-square {
     width: 200px;
