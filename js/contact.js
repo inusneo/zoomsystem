@@ -31,6 +31,16 @@ document.addEventListener("DOMContentLoaded", () => {
   // 파일 input 변경 시 선택된 파일 목록에 추가
   fileInput.addEventListener("change", () => {
     const files = Array.from(fileInput.files);
+
+    // 총 파일 개수 계산
+    const totalFiles = selectedFiles.length + files.length;
+
+    if (totalFiles > 10) {
+      alert("添付ファイルは10個までアップロード可能です。");
+      fileInput.value = ""; // 파일 선택 초기화
+      return;
+    }
+
     selectedFiles = selectedFiles.concat(files);
     renderFileList();
   });
@@ -101,20 +111,33 @@ document.addEventListener("DOMContentLoaded", () => {
       const school = document.getElementById("schoolName").value.trim();
       const affi = document.getElementById("affiliation").value.trim();
       const termsCheckbox = document.getElementById("userTerms");
+      const fileNameConfirmList = document.getElementById("fileNameConfirmList");
 
+      if (fileNameConfirmList) {
+        fileNameConfirmList.innerHTML = "";
+        if (selectedFiles.length === 0) {
+          fileNameConfirmList.innerHTML = "<li>添付ファイルなし</li>";
+        } else {
+          selectedFiles.forEach((file) => {
+            const li = document.createElement("li");
+            li.textContent = file.name;
+            fileNameConfirmList.appendChild(li);
+          });
+        }
+      }
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       const nameRegex = /^[\p{Script=Hiragana}\p{Script=Han}A-Za-z]+$/u;
       const katakanaRegex = /^[\p{Script=Katakana}]+$/u;
       const phoneRegex = /^(0\d{1,2})-(\d{4})-(\d{4})$/;
 
       // 유효성 검사 실행
+      if (!validateInput(select, null, "お問い合わせ内容を選択してください。")) return;
       if (!validateInput(kanjiFirstName, nameRegex, "姓は漢字または英語で入力してください。")) return;
       if (!validateInput(kanjiLastName, nameRegex, "名は漢字または英語で入力してください。")) return;
       if (!validateInput(furikanaLastName, katakanaRegex, "セイはカタカナで入力してください。")) return;
       if (!validateInput(furikanaFirstName, katakanaRegex, "メイはカタカナで入力してください。")) return;
-      if (!validateInput(phone, phoneRegex, "電話番号は「03-1234-5678」または「070-1234-5678」の形式で入力してください。")) return;
-      if (!validateInput(select, null, "お問い合わせ内容を選択してください。")) return;
       if (!validateInput(email, emailRegex, "有効なメールアドレスを入力してください。")) return;
+      if (!validateInput(phone, phoneRegex, "電話番号は「03-1234-5678」または「070-1234-5678」の形式で入力してください。")) return;
       if (!validateInput(detail, null, "お問い合わせ内容の詳細を入力してください。")) return;
       if (!termsCheckbox.checked) {
         alert("個人情報の取り扱いに同意してください。");
@@ -132,19 +155,8 @@ document.addEventListener("DOMContentLoaded", () => {
       document.querySelector(".input_text5").textContent = affi;
       document.querySelector(".input_text6").textContent = email;
       document.querySelector(".input_text7").textContent = phone;
+      document.querySelector(".input_text8").innerHTML = fileNameConfirmList.innerHTML;
       document.querySelector(".input_text9").textContent = detail;
-
-      // 파일 목록 출력 (확인 화면용)
-      fileNameConfirmList.innerHTML = "";
-      if (selectedFiles.length === 0) {
-        fileNameConfirmList.innerHTML = "<li>添付ファイルなし</li>";
-      } else {
-        selectedFiles.forEach((file) => {
-          const li = document.createElement("li");
-          li.textContent = file.name;
-          fileNameConfirmList.appendChild(li);
-        });
-      }
 
       // 진행상태 및 화면 변경
       progressItems.forEach((item) => item.classList.remove("is-active"));
@@ -223,10 +235,12 @@ document.addEventListener("DOMContentLoaded", () => {
       let index = 1; // index를 1로 초기화
       if (selectedFiles.length > 0) {
         console.log(selectedFiles.length);
-        for (let i = 0; i < selectedFiles.length; i++) {
+        for (let i = 0; i < selectedFiles.length && i < 10; i++) {
           const file = selectedFiles[i];
-          formData.append("file-attachment${index}", file); // 배열 형식으로 첨부
+          formData.append("file-attachment" + index, file); // 배열 형식으로 첨부
+          console.log(formData.values);
           index++; // index를 1씩 증가시킴
+          console.log(formData.values);
         }
       }
 
