@@ -19,7 +19,7 @@
       <!-- Header -->
       <header id="header" class="header">
         <div class="header_inner">
-          <h1 class="logo"><a href="#main">ZOOM SYSTEM</a></h1>
+          <h1 class="logo"><a href="#main"><span class="blind">ZOOM SYSTEM</span></a></h1>
           <nav class="gnav">
             <ul class="gnav_list">
               <li>
@@ -114,11 +114,11 @@
               <li class="progress_item"><span>3.完了</span></li>
             </ul>
             <!-- S: 1단계 문의사항 입력 영역 --->
-            <div id="step1" class="area-input">
+            <div class="area-input">
               <div class="box-text">
                 <strong class="text-required">印は必須入力項目です。</strong>
               </div>
-              <form action="/contact" method="POST" onsubmit="return false;">
+              <form action="/contact" method="POST">
                 <ul class="input_list">
                   <li class="input_item input_item-single">
                     <label for="selectType" class="label-title label-required">お問い合わせ内容</label>
@@ -172,19 +172,23 @@
                     <label for="userPhone" class="label-title label-required">電話番号</label>
                     <input id="userPhone" type="text" placeholder="例）070-1234-5678（ハイフンは自動で挿入されます）" class="input input-required input-full" />
                   </li>
-                  <li id="dropZone" class="input_item input_item-single">
+                  <li id="dropZone" class="input_item">
                     <strong>添付ファイル</strong>
                     <!-- 숨겨진 파일 input -->
-                    <input id="uploadFile" type="file" accept="audio/*,video/*,image/*" class="input-file" multiple style="display: none" />
-                    <!-- 커스텀 버튼 -->
-                    <button type="button" id="customUploadBtn">ファイルを選択</button>
-                    <!-- 삭제 버튼 -->
-                    <button type="button" id="clearFilesBtn">削除</button>
-                    <!-- 파일 이름 표시 -->
-                    <div>
-                      ファイル名　：　
-                      <ul id="fileNameConfirmList">
-                        <li>添付ファイルなし</li>
+                    <div class="box-btn-file">
+                      <input id="uploadFile" type="file" accept="audio/*,video/*,image/*" multiple style="display: none" />
+                      <!-- 커스텀 버튼 -->
+                      <button type="button" id="customUploadBtn" class="btn-outline btn-outline-file">ファイルを選択</button>
+                      <!-- 삭제 버튼 -->
+                      <button type="button" id="clearFilesBtn" class="btn-outline btn-outline-delete">全て削除</button>
+                      <!-- 파일 이름 표시 -->
+                      <ul id="fileNameConfirmList" class="file_list">
+                        <li class="file_item">
+                          <div class="file_name">
+                            <span>添付ファイルなし添付ファイルなし添付ファイルなしなし添付ファイルなし添付ファイルなし</span>
+                          </div>
+                          <button type="button" id="clearFilesBtn" class="btn-outline btn-outline-delete-small">削除</button>
+                        </li>
                       </ul>
                     </div>
                   </li>
@@ -251,7 +255,7 @@
                   <strong>添付ファイル</strong>
                   <div>
                     ファイル名　：　
-                    <ul id="fileNameConfirmList2">
+                    <ul class="input_text8">
                       <li>添付ファイルなし</li>
                     </ul>
                   </div>

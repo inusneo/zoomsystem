@@ -533,6 +533,32 @@
     .input_text {
       font-size: 1.25rem;
     }
+    .file {
+      &_list {
+        margin-top: 7px;
+        padding-left: 20px;
+        font-size: 0.88rem;
+      }
+      &_item {
+        display: block;
+        padding: 0;
+
+        &:not(:last-child) {
+          border: none;
+        }
+        & + .file_item {
+          margin-top: 5px;
+        }
+      }
+      &_name {
+        vertical-align: middle;
+        display: inline-block;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        width: 74%;
+      }
+    }
   }
   .input_item {
     .label-title,
@@ -581,6 +607,7 @@
     &-textarea {
       padding: 15px 20px;
       height: 140px;
+      font-size: 1.25rem;
     }
   }
   .input-set {
@@ -597,23 +624,11 @@
     }
   }
   .terms {
+    overflow-y: auto;
+    max-height: 150px;
     padding: 15px 20px;
     border: 1px solid var(--gray-medium);
     font-size: 1.25rem;
-  }
-}
-
-input[type=file]::file-selector-button {
-  width: 150px;
-  height: 40px;
-  margin-right: 15px;
-  background: var(--white);
-  border: 1px solid var(--gray-medium);
-  cursor: pointer;
-
-  &:hover {
-    background-color: var(--skyblue);
-    color: var(--white);
   }
 }
 
@@ -1064,6 +1079,7 @@ input[type=file]::file-selector-button {
       }
       &-textarea {
         margin-left: 15px;
+        font-size: 1rem;
       }
     }
     .box-input {
@@ -1513,28 +1529,15 @@ input[type=file]::file-selector-button {
         height: 100px;
         margin-left: 8px;
         padding: 5px 10px;
+        font-size: 0.75rem;
       }
     }
     
     .terms {
+      max-height: 123px;
       margin-left: 8px;
       padding: 5px 10px;
       font-size: 0.69rem;
-    }
-  }
-
-  .input-file {
-    width: 100%;
-  }
-
-  input[type=file]::file-selector-button {
-    width: 100px;
-    height: 32px;
-    margin-right: 5px;
-  
-    &:hover {
-      background-color: var(--white);
-      color: var(--gray);
     }
   }
 
