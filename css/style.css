@@ -2364,6 +2364,7 @@ form + .box-btn {
   position: relative;
   padding: 10px 0 50px 50px;
   font-size: 1.25rem;
+  font-weight: 700;
 }
 .history_detail::before {
   display: block;
@@ -2386,6 +2387,13 @@ form + .box-btn {
   border-radius: 50%;
   border: 2px solid var(--skyblue);
   content: "";
+}
+.history_month {
+  padding-right: 10px;
+  font-size: 1.5rem;
+}
+.history_company {
+  font-weight: normal;
 }
 
 @media screen and (min-width: 768px) and (max-width: 1139px) {
@@ -3021,5 +3029,9 @@ form + .box-btn {
     left: -5px;
     width: 7px;
     height: 7px;
+  }
+  .history_month {
+    padding-right: 5px;
+    font-size: 1rem;
   }
 }/*# sourceMappingURL=style.css.map */

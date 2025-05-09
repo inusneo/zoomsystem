@@ -815,6 +815,7 @@
     position: relative;
     padding: 10px 0 50px 50px;
     font-size: 1.25rem;
+    font-weight: 700;
 
     &::before {
       display: block;
@@ -838,6 +839,13 @@
       border: 2px solid var(--skyblue);
       content:"";
     }
+  }
+  &_month {
+    padding-right: 10px;
+    font-size: 1.5rem;
+  }
+  &_company {
+    font-weight: normal;
   }
 }
 
@@ -1635,6 +1643,10 @@
         width: 7px;
         height: 7px;
       }
+    }
+    &_month {
+      padding-right: 5px;
+      font-size: 1rem;
     }
   }
 }
