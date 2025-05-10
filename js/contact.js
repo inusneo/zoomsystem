@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
     fileNameConfirmList.innerHTML = "";
 
     if (selectedFiles.length === 0) {
-      fileNameConfirmList.innerHTML = "<li>添付ファイルなし</li>";
+      fileNameConfirmList.innerHTML = "<span>添付ファイルなし</span>";
       return;
     }
 
@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
       li.textContent = file.name;
 
       const removeBtn = document.createElement("button");
-      removeBtn.textContent = "削除";
+      removeBtn.innerHTML = '<button type="button" id="clearFilesBtn" class="btn-outline btn-outline-delete-small">削除</button>';
       removeBtn.addEventListener("click", () => {
         selectedFiles.splice(index, 1);
         renderFileList();
@@ -116,7 +116,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (fileNameConfirmList) {
         fileNameConfirmList.innerHTML = "";
         if (selectedFiles.length === 0) {
-          fileNameConfirmList.innerHTML = "<li>添付ファイルなし</li>";
+          fileNameConfirmList.innerHTML = "<span>添付ファイルなし</span>";
         } else {
           selectedFiles.forEach((file) => {
             const li = document.createElement("li");

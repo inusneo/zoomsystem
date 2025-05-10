@@ -114,7 +114,7 @@
               <li class="progress_item"><span>3.完了</span></li>
             </ul>
             <!-- S: 1단계 문의사항 입력 영역 --->
-            <div class="area-input">
+            <div id="step1" class="area-input">
               <div class="box-text">
                 <strong class="text-required">印は必須入力項目です。</strong>
               </div>
@@ -187,7 +187,6 @@
                           <div class="file_name">
                             <span>添付ファイルなし添付ファイルなし添付ファイルなしなし添付ファイルなし添付ファイルなし</span>
                           </div>
-                          <button type="button" id="clearFilesBtn" class="btn-outline btn-outline-delete-small">削除</button>
                         </li>
                       </ul>
                     </div>
@@ -253,12 +252,9 @@
                 </li>
                 <li class="input_item input_item-single">
                   <strong>添付ファイル</strong>
-                  <div>
-                    ファイル名　：　
                     <ul class="input_text8">
-                      <li>添付ファイルなし</li>
+                      <span>添付ファイルなし</span>
                     </ul>
-                  </div>
                 </li>
                 <li class="input_item">
                   <strong class="label-required">お問い合わせ内容の詳細</strong>
