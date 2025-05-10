@@ -778,6 +778,9 @@ form + .box-btn {
   overflow: hidden;
   display: flex;
 }
+.box-btn-file .box-left {
+  display: flex;
+}
 .box-btn a {
   display: inline-block;
 }
@@ -931,6 +934,24 @@ form + .box-btn {
   .box-btn {
     margin-top: 30px;
   }
+  .btn-outline-file {
+    flex: 0 0 90px;
+    width: 90px;
+    height: 30px;
+    margin-right: 10px;
+    font-size: 0.75rem;
+  }
+  .btn-outline-delete {
+    flex: 0 0 60px;
+    width: 60px;
+    height: 30px;
+    font-size: 0.75rem;
+  }
+  .btn-outline-delete-small {
+    width: 40px;
+    height: 26px;
+    margin-left: 10px;
+  }
 }
 /* 모바일 가로, 모바일 세로 (해상도 767px 이하) */
 @media screen and (max-width: 767px) {
@@ -1007,6 +1028,11 @@ form + .box-btn {
   .box-btn-flex .btn-square {
     width: 155px;
   }
+  .box-btn-file .box-left {
+    flex: 0 0 80px;
+    display: block;
+    font-size: 0;
+  }
   .btn-square {
     width: 200px;
     height: 50px;
@@ -1014,12 +1040,22 @@ form + .box-btn {
     font-size: 1rem;
   }
   .btn-outline {
-    font-size: 0.69rem;
+    font-size: 0.5rem;
   }
   .btn-outline-file {
-    width: 100px;
-    height: 32px;
+    width: 60px;
+    height: 20px;
     margin-right: 5px;
+  }
+  .btn-outline-delete {
+    width: 60px;
+    height: 20px;
+    margin-top: 5px;
+  }
+  .btn-outline-delete-small {
+    width: 20px;
+    height: 16px;
+    margin-left: 5px;
   }
   .btn-outline:hover {
     background-color: var(--white);
@@ -2104,20 +2140,20 @@ form + .box-btn {
   transform: translateY(-40%);
   content: "*";
 }
-.area-input .input_list li {
+.area-input .input_list > li {
   display: flex;
   gap: 50px;
   padding: 40px 20px;
 }
-.area-input .input_list li:not(:last-child) {
+.area-input .input_list > li:not(:last-child) {
   border-bottom: 1px solid var(--gray-light);
 }
-.area-input .input_list li.input_item-column {
+.area-input .input_list > li.input_item-column {
   flex-direction: column;
   gap: 20px;
 }
-.area-input .input_list li.input_item-column .label-title,
-.area-input .input_list li.input_item-column strong {
+.area-input .input_list > li.input_item-column .label-title,
+.area-input .input_list > li.input_item-column strong {
   flex: 0 0 auto;
 }
 .area-input .input_list .input_text {
@@ -2350,13 +2386,13 @@ form + .box-btn {
 }
 .history_item {
   display: flex;
-  gap: 100px;
+  gap: 80px;
 }
 .history_item:last-of-type .history_detail::before {
   display: none;
 }
 .history_years {
-  flex: 0 0 128px;
+  flex: 0 0 135px;
   font-size: 3rem;
   font-weight: 900;
 }
@@ -2553,12 +2589,20 @@ form + .box-btn {
   .area-input .label-required::before {
     left: 0;
   }
-  .area-input .input_list li {
+  .area-input .input_list > li {
     gap: 20px;
     padding: 30px 0;
   }
   .area-input .input_list .input_text {
     font-size: 1rem;
+  }
+  .area-input .input_list .file_list {
+    margin-top: 2px;
+    padding-left: 10px;
+    font-size: 0.69rem;
+  }
+  .area-input .input_list .file_name {
+    width: 45%;
   }
   .area-input .input_item .label-title,
   .area-input .input_item strong {
@@ -2632,7 +2676,7 @@ form + .box-btn {
     background-color: rgba(29, 81, 139, 0.3);
   }
   .history_item {
-    gap: 60px;
+    gap: 50px;
   }
   .history_years {
     font-size: 2.5rem;
@@ -2894,15 +2938,23 @@ form + .box-btn {
   .area-input .text-required {
     font-size: 0.75rem;
   }
-  .area-input .input_list li {
+  .area-input .input_list > li {
     gap: 5px;
     padding: 20px 0;
   }
-  .area-input .input_list li.input_item-column {
+  .area-input .input_list > li.input_item-column {
     gap: 5px;
   }
   .area-input .input_list .input_text {
     font-size: 0.69rem;
+  }
+  .area-input .input_list .file_list {
+    margin-top: 0;
+    padding-left: 0;
+    font-size: 0.5rem;
+  }
+  .area-input .input_list .file_name {
+    width: 38%;
   }
   .area-input .input_item .label-title,
   .area-input .input_item strong {

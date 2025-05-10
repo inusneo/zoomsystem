@@ -126,6 +126,10 @@ form + .box-btn {
   &-file {
     overflow: hidden;
     display: flex;
+
+    .box-left {
+      display: flex;
+    }
   }
   a {
     display: inline-block;
@@ -298,6 +302,29 @@ form + .box-btn {
   .box-btn {
     margin-top: 30px;
   }
+  .btn {
+    &-outline {
+      &-file {
+        flex: 0 0 90px;
+        width: 90px;
+        height: 30px;
+        margin-right: 10px;
+        font-size: 0.75rem;
+      }
+      &-delete {
+        flex: 0 0 60px;
+        width: 60px;
+        height: 30px;
+        font-size: 0.75rem;
+
+        &-small {
+          width: 40px;
+          height: 26px;
+          margin-left: 10px;
+        }
+      }
+    }
+  }
 }
 /* 모바일 가로, 모바일 세로 (해상도 767px 이하) */ 
 @media screen and (max-width:767px) {
@@ -377,6 +404,13 @@ form + .box-btn {
         width: 155px;
       }
     }
+    &-file {
+      .box-left {
+        flex: 0 0 80px;
+        display: block;
+        font-size: 0;
+      }
+    }
   }
   .btn-square {
     width: 200px;
@@ -385,12 +419,23 @@ form + .box-btn {
     font-size: 1rem;
   }
   .btn-outline {
-    font-size: .69rem;
+    font-size: .5rem;
 
     &-file {
-      width: 100px;
-      height: 32px;
+      width: 60px;
+      height: 20px;
       margin-right: 5px;
+    }
+    &-delete {
+      width: 60px;
+      height: 20px;
+      margin-top: 5px;
+
+      &-small {
+        width: 20px;
+        height: 16px;
+        margin-left: 5px;
+      }
     }
   
     &:hover {

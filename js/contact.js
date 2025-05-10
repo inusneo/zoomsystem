@@ -74,6 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     selectedFiles.forEach((file, index) => {
       const li = document.createElement("li");
+      li.classList.add("file_item");
       li.textContent = file.name;
 
       const removeBtn = document.createElement("button");

@@ -176,17 +176,32 @@
                     <strong>添付ファイル</strong>
                     <!-- 숨겨진 파일 input -->
                     <div class="box-btn-file">
-                      <input id="uploadFile" type="file" accept="audio/*,video/*,image/*" multiple style="display: none" />
-                      <!-- 커스텀 버튼 -->
-                      <button type="button" id="customUploadBtn" class="btn-outline btn-outline-file">ファイルを選択</button>
-                      <!-- 삭제 버튼 -->
-                      <button type="button" id="clearFilesBtn" class="btn-outline btn-outline-delete">全て削除</button>
+                      <div class="box-left">
+                        <input id="uploadFile" type="file" accept="audio/*,video/*,image/*" multiple style="display: none" />
+                        <!-- 커스텀 버튼 -->
+                        <button type="button" id="customUploadBtn" class="btn-outline btn-outline-file">ファイルを選択</button>
+                        <!-- 삭제 버튼 -->
+                        <button type="button" id="clearFilesBtn" class="btn-outline btn-outline-delete">全て削除</button>
+                      </div>
                       <!-- 파일 이름 표시 -->
                       <ul id="fileNameConfirmList" class="file_list">
                         <li class="file_item">
                           <div class="file_name">
                             <span>添付ファイルなし添付ファイルなし添付ファイルなしなし添付ファイルなし添付ファイルなし</span>
                           </div>
+                          <button type="button" id="clearFilesBtn" class="btn-outline btn-outline-delete-small">削除</button>
+                        </li>
+                        <li class="file_item">
+                          <div class="file_name">
+                            <span>添付ファイルなし添付ファイルなし添付ファイルなしなし添付ファイルなし添付ファイルなし</span>
+                          </div>
+                          <button type="button" id="clearFilesBtn" class="btn-outline btn-outline-delete-small">削除</button>
+                        </li>
+                        <li class="file_item">
+                          <div class="file_name">
+                            <span>添付ファイルなし添付ファイルなし添付ファイルなしなし添付ファイルなし添付ファイルなし</span>
+                          </div>
+                          <button type="button" id="clearFilesBtn" class="btn-outline btn-outline-delete-small">削除</button>
                         </li>
                       </ul>
                     </div>
