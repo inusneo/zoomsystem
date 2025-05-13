@@ -849,6 +849,69 @@
   }
 }
 
+// Recruit page
+.accordion {
+  & + .accordion {
+    margin-top: 60px;
+  }
+  &_top {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 200px;
+    padding: 0 40px;
+    background-image: url(../img/bg_sub_recruit_title1.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: var(--white);
+
+    .btn-plus {
+      margin-left: auto;
+    }
+  }
+  &_title {
+    font-size: 3.5rem;
+    font-weight: 900;
+  }
+  &_description {
+    margin-left: 40px;
+    font-size: 1.5rem;
+  }
+  &_bottom {
+    width: 100%;
+    color: var(--gray);
+    border: 1px solid var(--gray-light);
+    border-top: none;
+  }
+  &_list {
+    > li {
+      display: flex;
+      & + li {
+        border-top: 1px solid var(--gray-light);
+      }
+    }
+    &_title {
+      flex: 0 0 250px;
+      padding: 15px 30px;
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+    &_content {
+      padding: 15px 30px;
+      border-left: 1px solid var(--gray-light);
+      font-size: 1rem;
+    }
+  }
+  &_list-sub {
+    > li {
+      &:not(:first-child) {
+        margin-top: 5px;
+      }
+    }
+  }
+}
+
 @media screen and (min-width:768px) and (max-width:1139px) {
   .top_visual {
     .inner {

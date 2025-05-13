@@ -822,6 +822,30 @@ form + .box-btn {
   background-color: var(--gray-bright);
   margin-left: 10px;
 }
+.btn-plus {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border: solid 1px var(--white-op80);
+  transition: transform 0.3s, background-color 0.3s;
+}
+.btn-plus:hover {
+  transform: rotate(45deg);
+  background-color: var(--blue);
+}
+.btn-plus:hover::before {
+  transform: rotate(45deg);
+}
+.btn-plus::before {
+  display: block;
+  width: 10px;
+  height: 10px;
+  background: url(../img/icon_plus_10x10.png) no-repeat center/cover;
+  content: "";
+  transition: transform 0.3s;
+}
 
 .color_point {
   color: var(--skyblue);
@@ -2430,6 +2454,59 @@ form + .box-btn {
 }
 .history_company {
   font-weight: normal;
+}
+
+.accordion + .accordion {
+  margin-top: 60px;
+}
+.accordion_top {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 200px;
+  padding: 0 40px;
+  background-image: url(../img/bg_sub_recruit_title1.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  color: var(--white);
+}
+.accordion_top .btn-plus {
+  margin-left: auto;
+}
+.accordion_title {
+  font-size: 3.5rem;
+  font-weight: 900;
+}
+.accordion_description {
+  margin-left: 40px;
+  font-size: 1.5rem;
+}
+.accordion_bottom {
+  width: 100%;
+  color: var(--gray);
+  border: 1px solid var(--gray-light);
+  border-top: none;
+}
+.accordion_list > li {
+  display: flex;
+}
+.accordion_list > li + li {
+  border-top: 1px solid var(--gray-light);
+}
+.accordion_list_title {
+  flex: 0 0 250px;
+  padding: 15px 30px;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+.accordion_list_content {
+  padding: 15px 30px;
+  border-left: 1px solid var(--gray-light);
+  font-size: 1rem;
+}
+.accordion_list-sub > li:not(:first-child) {
+  margin-top: 5px;
 }
 
 @media screen and (min-width: 768px) and (max-width: 1139px) {

@@ -175,6 +175,32 @@ form + .box-btn {
       }
     }
   }
+  &-plus {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border: solid 1px var(--white-op80);
+    transition: transform 0.3s, background-color 0.3s;
+
+    &:hover {
+      transform: rotate(45deg);
+      background-color: var(--blue);
+
+      &::before {
+        transform: rotate(45deg);
+      }
+    }
+    &::before {
+      display: block;
+      width: 10px;
+      height: 10px;
+      background: url(../img/icon_plus_10x10.png) no-repeat center / cover;
+      content: "";
+      transition: transform 0.3s;
+    }
+  }
 }
 
 .color {
