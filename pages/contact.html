@@ -177,7 +177,12 @@
                     <!-- 숨겨진 파일 input -->
                     <div class="box-btn-file">
                       <div class="box-left">
-                        <input id="uploadFile" type="file" accept="audio/*,video/*,image/*" multiple style="display: none" />
+                                    <input id="uploadFile" type="file" accept="image/*,
+                                    .doc,.docx,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,
+                                    .xls,.xlsx,application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,
+                                    .ppt,.pptx,application/vnd.ms-powerpoint,application/vnd.openxmlformats-officedocument.presentationml.presentation,
+                                    .hwp,application/x-hwp,
+                                    .pdf,application/pdf" multiple style="display: none" />
                         <!-- 커스텀 버튼 -->
                         <button type="button" id="customUploadBtn" class="btn-outline btn-outline-file">ファイルを選択</button>
                         <!-- 삭제 버튼 -->
@@ -212,14 +217,41 @@
                   </li>
                   <li class="input_item input_item-column">
                     <strong class="label-required">ププライバシーポリシーに同意する</strong>
-                    <p class="terms">
-                      「お問い合わせ」でご入力いただいた個人情報は、お問合せやご意見等に対する回答及びお客様への対応業務の品質向上のために必要な範囲内においてのみ使用いたします。詳しくは、個人情報の保護方針をご覧ください。
-                      上記の取扱い方針にご同意いただける場合はチェックボックス「個人情報の取り扱いに同意する」にチェックを入れて、「お問い合わせ」ボタンを押して先にお進み下さい。
+                            <p class="terms"><strong>ZOOM SYSTEM株式会社</strong>（以下、「当社」といいます。）は、本ウェブサイト上で提供するサービス（以下、「本サービス」といいます。）における、ユーザーの個人情報の取扱いについて、以下の通りプライバシーポリシーを定め、これを公表し、遵守します。<br><br>
+                                <strong>第1条（関係法令などの遵守）</strong><br><br>
+                                当社は、個人情報保護法その他の関係法令、ガイドライン及び本プライバシーポリシーを遵守し、個人情報を適切に取り扱います。<br><br><br>
+                                <strong>第2条（個人情報の適法・適正な取得）</strong><br><br>
+                                当社は、個人情報を取得する際には、利用目的を公表または通知し（本プライバシーポリシーによる公表を含みます。）、また、直接ご本人からの書面（電磁的記録を含みます。）に記載された個人情報を取得する場合にはあらかじめ利用目的を明示し、適正な手段によって取得いたします。ただし、個人情報保護法その他の法令で特段の定めがある場合を除きます。<br><br><br>
+                                <strong>第3条（個人情報の利用目的）</strong><br><br>
+                                当社が個人情報を収集・利用する目的は、以下のとおりです。<br><br>
+                                <span style="display: block; margin-left: 2em;">1. 当社サービスの提供・運営のため</span><br>
+                                <span style="display: block; margin-left: 2em;">2. 各種お問い合わせなどへの対応のため</span><br>
+                                <span style="display: block; margin-left: 2em;">3. ユーザーが利用中のサービスの案内を送付するため</span><br>
+                                <span style="display: block; margin-left: 2em;">4. メンテナンス、重要なお知らせなど必要に応じたご連絡のため</span><br>
+                                <span style="display: block; margin-left: 2em;">5. ユーザーにご自身の登録情報の閲覧や変更、削除、ご利用状況の閲覧を行っていただくため</span><br>
+                                <span style="display: block; margin-left: 2em;">6. その他、上記目的に付随する業務の遂行のため</span><br><br><br>
+                                <strong>第4条（個人データの管理）</strong><br><br>
+                                当社は、個人データについて、漏えい、滅失又は毀損の防止など、その管理のために必要かつ適切な安全管理措置を講じます。安全管理措置の内容は、法令に基づき、本人の求めに応じて遅滞なく回答いたします。個人データを取り扱う従業者に対して、必要かつ適切な監督を行います。個人データにつき、漏えい、滅失、毀損その他の個人データの安全の確保に係る事態であって個人の権利利益を害するおそれが大きいものが生じたときは、法令の定めに従い、必要に応じて、当該事態について個人情報保護委員会及び本人に対して通知を行います。<br><br><br>
+                                <strong>第5条（個人情報の第三者提供）</strong><br><br>
+                                当社は、あらかじめ同意がある場合又は個人情報保護法その他の法令で認められている場合を除き、個人データを第三者に提供いたしません。<br><br><br>
+                                <strong>第6条（個人情報の訂正および削除）</strong><br><br>
+                                <span style="display: block; margin-left: 2em;">1. ユーザーは、当社の保有する自己の個人情報が誤った情報である場合には、当社が定める手続きにより、当社に対して個人情報の訂正、追加または削除（以下、「訂正など」といいます。）を請求することができます。</span><br>
+                                <span style="display: block; margin-left: 2em;">2. 当社は、ユーザーから前項の請求を受けてその請求に応じる必要があると判断した場合には、遅滞なく、当該個人情報の訂正などを行うものとします。</span><br>
+                                <span style="display: block; margin-left: 2em;">3. 当社は、前項の規定に基づき訂正などを行った場合、または訂正などを行わない旨の決定をしたときは遅滞なく、これをユーザーに通知します。</span><br><br><br>
+                                <strong>第7条（個人情報の利用停止など）</strong><br><br>
+                                <span style="display: block; margin-left: 2em;">1. 当社は、本人から個人情報が、利用目的の範囲を超えて取り扱われているという理由、または不正の手段により取得されたものであるという理由により、その利用の停止または消去（以下、「利用停止など」といいます。）を求められた場合には、遅滞なく必要な調査を行います。</span><br>
+                                <span style="display: block; margin-left: 2em;">2. 前項の調査結果に基づき、その請求に応じる必要があると判断した場合には、遅滞なく、当該個人情報の利用停止などを行います。</span><br>
+                                <span style="display: block; margin-left: 2em;">3. 当社は、前項の規定に基づき利用停止などを行った場合、または利用停止などを行わない旨の決定をしたときは、遅滞なく、これをユーザーに通知します。</span><br><br><br>
+                                <strong>第8条（クッキーについて）</strong><br><br>
+                                当サイトでは、ウェブサイトの利便性向上を目的にクッキーを利用しています。クッキーはサーバーから利用者に送信されブラウザに保存される情報です。クッキーは無効にすることもできますが、その結果サイト機能の一部またはすべてが利用できなくなる可能性があります。<br><br><br>
+                                <strong>第9条（プライバシーポリシーの変更）</strong><br><br>
+                                <span style="display: block; margin-left: 2em;">1. 本ポリシーの内容は、法令その他本ポリシーに別段の定めのある事項を除いて、ユーザーに通知することなく、変更することができるものとします。</span><br>
+                                <span style="display: block; margin-left: 2em;">2. 当社が別途定める場合を除いて、変更後のプライバシーポリシーは、本ウェブサイトに掲載したときから効力を生じるものとします。</span><br>
                     </p>
                     <div class="input-checkbox">
                       <input id="userTerms" type="checkbox" />
                       <label for="userTerms" class="label-terms">
-                        <span class="text">個人情報の取り扱いに同意する</span>
+                                    <span class="text">上記内容に同意しました</span>
                       </label>
                     </div>
                   </li>
@@ -233,6 +265,9 @@
 
             <!-- S: 2단계 확인 영역 --->
             <div id="step2" class="area-input area-input-confirm" style="display: none">
+                <div id="loadingContainer" style="display: none; text-align: center;">
+                    <img src="../wp-content/themes/zoomsystem/assets/img/loading.gif" alt="loading" style="width: 50px; height: 50px;" />
+                </div>
               <div class="box-text">
                 <strong class="text-required">印は必須入力項目です。</strong>
               </div>
@@ -277,14 +312,41 @@
                 </li>
                 <li class="input_item input_item-column">
                   <strong class="label-required">ププライバシーポリシーに同意する</strong>
-                  <p class="terms">
-                    「お問い合わせ」でご入力いただいた個人情報は、お問合せやご意見等に対する回答及びお客様への対応業務の品質向上のために必要な範囲内においてのみ使用いたします。詳しくは、個人情報の保護方針をご覧ください。
-                    上記の取扱い方針にご同意いただける場合はチェックボックス「個人情報の取り扱いに同意する」にチェックを入れて、「お問い合わせ」ボタンを押して先にお進み下さい。
+                        <p class="terms"><strong>ZOOM SYSTEM株式会社</strong>（以下、「当社」といいます。）は、本ウェブサイト上で提供するサービス（以下、「本サービス」といいます。）における、ユーザーの個人情報の取扱いについて、以下の通りプライバシーポリシーを定め、これを公表し、遵守します。<br><br>
+                            <strong>第1条（関係法令などの遵守）</strong><br><br>
+                            当社は、個人情報保護法その他の関係法令、ガイドライン及び本プライバシーポリシーを遵守し、個人情報を適切に取り扱います。<br><br><br>
+                            <strong>第2条（個人情報の適法・適正な取得）</strong><br><br>
+                            当社は、個人情報を取得する際には、利用目的を公表または通知し（本プライバシーポリシーによる公表を含みます。）、また、直接ご本人からの書面（電磁的記録を含みます。）に記載された個人情報を取得する場合にはあらかじめ利用目的を明示し、適正な手段によって取得いたします。ただし、個人情報保護法その他の法令で特段の定めがある場合を除きます。<br><br><br>
+                            <strong>第3条（個人情報の利用目的）</strong><br><br>
+                            当社が個人情報を収集・利用する目的は、以下のとおりです。<br><br>
+                            <span style="display: block; margin-left: 2em;">1. 当社サービスの提供・運営のため</span><br>
+                            <span style="display: block; margin-left: 2em;">2. 各種お問い合わせなどへの対応のため</span><br>
+                            <span style="display: block; margin-left: 2em;">3. ユーザーが利用中のサービスの案内を送付するため</span><br>
+                            <span style="display: block; margin-left: 2em;">4. メンテナンス、重要なお知らせなど必要に応じたご連絡のため</span><br>
+                            <span style="display: block; margin-left: 2em;">5. ユーザーにご自身の登録情報の閲覧や変更、削除、ご利用状況の閲覧を行っていただくため</span><br>
+                            <span style="display: block; margin-left: 2em;">6. その他、上記目的に付随する業務の遂行のため</span><br><br><br>
+                            <strong>第4条（個人データの管理）</strong><br><br>
+                            当社は、個人データについて、漏えい、滅失又は毀損の防止など、その管理のために必要かつ適切な安全管理措置を講じます。安全管理措置の内容は、法令に基づき、本人の求めに応じて遅滞なく回答いたします。個人データを取り扱う従業者に対して、必要かつ適切な監督を行います。個人データにつき、漏えい、滅失、毀損その他の個人データの安全の確保に係る事態であって個人の権利利益を害するおそれが大きいものが生じたときは、法令の定めに従い、必要に応じて、当該事態について個人情報保護委員会及び本人に対して通知を行います。<br><br><br>
+                            <strong>第5条（個人情報の第三者提供）</strong><br><br>
+                            当社は、あらかじめ同意がある場合又は個人情報保護法その他の法令で認められている場合を除き、個人データを第三者に提供いたしません。<br><br><br>
+                            <strong>第6条（個人情報の訂正および削除）</strong><br><br>
+                            <span style="display: block; margin-left: 2em;">1. ユーザーは、当社の保有する自己の個人情報が誤った情報である場合には、当社が定める手続きにより、当社に対して個人情報の訂正、追加または削除（以下、「訂正など」といいます。）を請求することができます。</span><br>
+                            <span style="display: block; margin-left: 2em;">2. 当社は、ユーザーから前項の請求を受けてその請求に応じる必要があると判断した場合には、遅滞なく、当該個人情報の訂正などを行うものとします。</span><br>
+                            <span style="display: block; margin-left: 2em;">3. 当社は、前項の規定に基づき訂正などを行った場合、または訂正などを行わない旨の決定をしたときは遅滞なく、これをユーザーに通知します。</span><br><br><br>
+                            <strong>第7条（個人情報の利用停止など）</strong><br><br>
+                            <span style="display: block; margin-left: 2em;">1. 当社は、本人から個人情報が、利用目的の範囲を超えて取り扱われているという理由、または不正の手段により取得されたものであるという理由により、その利用の停止または消去（以下、「利用停止など」といいます。）を求められた場合には、遅滞なく必要な調査を行います。</span><br>
+                            <span style="display: block; margin-left: 2em;">2. 前項の調査結果に基づき、その請求に応じる必要があると判断した場合には、遅滞なく、当該個人情報の利用停止などを行います。</span><br>
+                            <span style="display: block; margin-left: 2em;">3. 当社は、前項の規定に基づき利用停止などを行った場合、または利用停止などを行わない旨の決定をしたときは、遅滞なく、これをユーザーに通知します。</span><br><br><br>
+                            <strong>第8条（クッキーについて）</strong><br><br>
+                            当サイトでは、ウェブサイトの利便性向上を目的にクッキーを利用しています。クッキーはサーバーから利用者に送信されブラウザに保存される情報です。クッキーは無効にすることもできますが、その結果サイト機能の一部またはすべてが利用できなくなる可能性があります。<br><br><br>
+                            <strong>第9条（プライバシーポリシーの変更）</strong><br><br>
+                            <span style="display: block; margin-left: 2em;">1. 本ポリシーの内容は、法令その他本ポリシーに別段の定めのある事項を除いて、ユーザーに通知することなく、変更することができるものとします。</span><br>
+                            <span style="display: block; margin-left: 2em;">2. 当社が別途定める場合を除いて、変更後のプライバシーポリシーは、本ウェブサイトに掲載したときから効力を生じるものとします。</span><br>
                   </p>
                   <div class="input-checkbox is-complete">
                     <input id="userTerms" type="checkbox" disabled />
                     <label for="userTerms" class="label-terms">
-                      <span class="text">個人情報の取り扱いに同意する</span>
+                                <span class="text">上記内容に同意しました</span>
                     </label>
                   </div>
                 </li>
