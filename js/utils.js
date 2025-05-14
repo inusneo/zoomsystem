@@ -66,6 +66,14 @@ $(document).ready(function () {
     }, 200);
   });
 
+  // Accordion
+  $('.accordion .btn-plus').click(function () {
+    const $accordionEl = $(this).closest('.accordion');
+    const isActive = $accordionEl.hasClass('is-active');
+
+    $accordionEl.toggleClass('is-active', !isActive).children('.accordion_bottom').stop().slideToggle();
+  });
+
   checkHeaderOverlap();
   $window.on('scroll resize', checkHeaderOverlap);
 });

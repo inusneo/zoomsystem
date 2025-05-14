@@ -854,6 +854,9 @@
   & + .accordion {
     margin-top: 60px;
   }
+  & + .box-btn {
+    margin-top: 80px;
+  }
   &_top {
     display: flex;
     align-items: center;
@@ -866,7 +869,12 @@
     background-size: cover;
     color: var(--white);
 
+    &-second {
+      background-image: url(../img/bg_sub_recruit_title2.png);
+    }
+
     .btn-plus {
+      flex: 0 0 60px;
       margin-left: auto;
     }
   }
@@ -876,9 +884,11 @@
   }
   &_description {
     margin-left: 40px;
+    margin-right: 20px;
     font-size: 1.5rem;
   }
   &_bottom {
+    display: none;
     width: 100%;
     color: var(--gray);
     border: 1px solid var(--gray-light);
@@ -901,13 +911,68 @@
       padding: 15px 30px;
       border-left: 1px solid var(--gray-light);
       font-size: 1rem;
+
+      &-column {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
     }
   }
   &_list-sub {
     > li {
       &:not(:first-child) {
-        margin-top: 5px;
+        margin-top: 10px;
       }
+    }
+    &-skill {
+      > li {
+        position: relative;
+
+        &:first-child {
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+        }
+        &:not(:first-child) {
+          margin-top: 20px;
+        }
+      }
+      &_type {
+        padding-left: 10px;
+
+        &::before {
+          display: block;
+          position: absolute;
+          top: 8px;
+          left: 0;
+          width: 3px;
+          height: 3px;
+          border-radius: 50%;
+          background-color: var(--gray);
+          content: "";
+        }
+      }
+      &_lang {
+        padding-left: 10px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1139px) {
+  .accordion {
+    &_top {
+      position: relative;
+      flex-direction: column;
+      align-items: flex-start;
+
+      .btn-plus {
+        position: absolute;
+      }
+    }
+    &_description {
+      margin: 0;
     }
   }
 }
@@ -1240,6 +1305,31 @@
     }
     &_detail {
       font-size: 1rem;
+    }
+  }
+
+  .accordion {
+    &_top {
+      gap: 20px;
+      padding: 40px;
+
+      .btn-plus {
+        top: 40px;
+        right: 40px;
+      }
+    }
+    &_title {
+      font-size: 2.63rem;
+    }
+    &_description {
+      font-size: 1.25rem;
+    }
+    &_list {
+      &_title {
+        flex: 0 0 140px;
+        padding: 15px 20px;
+        font-size: 1rem;
+      }
     }
   }
 }
@@ -1730,6 +1820,66 @@
     &_month {
       padding-right: 5px;
       font-size: 1rem;
+    }
+  }
+
+  .accordion {
+    & + .accordion {
+      margin-top: 30px;
+    }
+    & + .box-btn {
+      margin-top: 50px;
+    }
+    &_top {
+      gap: 10px;
+      height: 135px;
+      padding: 20px;
+
+      .btn-plus {
+        top: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+      }
+    }
+    &_title {
+      font-size: 2rem;
+      font-weight: 700;
+    }
+    &_description {
+      font-size: 0.88rem;
+    }
+    &_list {
+      &_title {
+        flex: 0 0 92px;
+        padding: 10px;
+        font-size: 0.75rem;
+      }
+      &_content {
+        padding: 10px;
+        font-size: 0.63rem;
+      }
+    }
+    &_list-sub {
+      &-skill {
+        > li {
+          &:not(:first-child) {
+            margin-top: 10px;
+          }
+        }
+        &_type {
+          padding-left: 7px;
+
+          &::before {
+            top: 5px;
+            width: 2px;
+            height: 2px;
+          }
+        }
+        &_lang {
+          padding-left: 7px;
+        }
+      }
     }
   }
 }
