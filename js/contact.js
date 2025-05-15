@@ -11,8 +11,26 @@ document.addEventListener("DOMContentLoaded", () => {
   const clearFilesBtn = document.getElementById("clearFilesBtn");
   const dropZone = document.getElementById("dropZone");
 
+  const maxFileSize = 2 * 1024 * 1024; // 최대 파일 크기 (2MB)
   // 선택된 파일 목록 저장용
   let selectedFiles = [];
+
+  const allowedExtensions = [
+    "jpg",
+    "jpeg",
+    "png",
+    "gif",
+    "bmp",
+    "webp", // 이미지
+    "doc",
+    "docx", // 워드
+    "xls",
+    "xlsx", // 엑셀
+    "ppt",
+    "pptx", // 파워포인트
+    "hwp", // 한글
+    "pdf", // PDF
+  ];
 
   // 유효성 검사 함수
   function validateInput(value, regex, errorMessage) {
@@ -31,6 +49,23 @@ document.addEventListener("DOMContentLoaded", () => {
   // 파일 input 변경 시 선택된 파일 목록에 추가
   fileInput.addEventListener("change", () => {
     const files = Array.from(fileInput.files);
+    // 파일 크기 검증
+    for (let file of files) {
+      if (file.size > maxFileSize) {
+        alert(`ファイルサイズが大きすぎます。最大ファイルサイズは 2MB です。`);
+        fileInput.value = ""; // 파일 입력 초기화
+        return;
+      }
+    }
+    // 파일 확장자 검사
+    for (let file of files) {
+      const ext = file.name.split(".").pop().toLowerCase();
+      if (!allowedExtensions.includes(ext)) {
+        alert(`.${ext} はアップロードできません。\n\nアップロード可能なファイル形式：\n画像：jpg, jpeg, png, gif, bmp, webp\n文書：doc, docx, pdf, hwp\n表計算：xls, xlsx\nプレゼン：ppt, pptx`);
+        fileInput.value = ""; // 입력 초기화
+        return;
+      }
+    }
 
     // 총 파일 개수 계산
     const totalFiles = selectedFiles.length + files.length;
@@ -59,6 +94,27 @@ document.addEventListener("DOMContentLoaded", () => {
     e.preventDefault();
     dropZone.style.backgroundColor = "";
     const droppedFiles = Array.from(e.dataTransfer.files);
+    // 파일 크기 검증
+    for (let file of droppedFiles) {
+      if (file.size > maxFileSize) {
+        alert(`ファイルサイズが大きすぎます。最大ファイルサイズは 2MB です。`);
+        fileInput.value = ""; // 파일 입력 초기화
+        return;
+      }
+    }
+    // 확장자 검사
+    for (let file of droppedFiles) {
+      const ext = file.name.split(".").pop().toLowerCase();
+      if (!allowedExtensions.includes(ext)) {
+        alert(`.${ext} はアップロードできません。\n\nアップロード可能なファイル形式：\n画像：jpg, jpeg, png, gif, bmp, webp\n文書：doc, docx, pdf, hwp\n表計算：xls, xlsx\nプレゼン：ppt, pptx`);
+        return;
+      }
+    }
+    // 드래그앤드롭으로 업로드할 파일이 10개 초과인지 체크
+    if (selectedFiles.length + droppedFiles.length > 10) {
+      alert("添付ファイルは10個までアップロード可能です。");
+      return;
+    }
     selectedFiles = selectedFiles.concat(droppedFiles);
     renderFileList();
   });
@@ -78,11 +134,10 @@ document.addEventListener("DOMContentLoaded", () => {
       li.textContent = file.name;
 
       const removeBtn = document.createElement("button");
-      removeBtn.innerHTML = '<button type="button" id="clearFilesBtn" class="btn-outline btn-outline-delete-small">削除</button>';
-      removeBtn.addEventListener("click", () => {
-        selectedFiles.splice(index, 1);
-        renderFileList();
-      });
+      removeBtn.setAttribute("type", "button");
+      removeBtn.className = "btn-outline btn-outline-delete-small remove-btn"; // 삭제 버튼에 적절한 클래스 추가
+      removeBtn.setAttribute("data-index", index);
+      removeBtn.textContent = "削除";
 
       li.appendChild(removeBtn);
       fileNameConfirmList.appendChild(li);
@@ -128,13 +183,13 @@ document.addEventListener("DOMContentLoaded", () => {
       }
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       const nameRegex = /^[\p{Script=Hiragana}\p{Script=Han}A-Za-z]+$/u;
-      const katakanaRegex = /^[\p{Script=Katakana}]+$/u;
-      const phoneRegex = /^(0\d{1,2})-(\d{4})-(\d{4})$/;
+      const katakanaRegex = /^[\p{Script=Katakana}-]+$/u;
+      const phoneRegex = /^\d{2,4}-\d{2,4}-\d{4}$/;
 
       // 유효성 검사 실행
       if (!validateInput(select, null, "お問い合わせ内容を選択してください。")) return;
-      if (!validateInput(kanjiFirstName, nameRegex, "姓は漢字または英語で入力してください。")) return;
-      if (!validateInput(kanjiLastName, nameRegex, "名は漢字または英語で入力してください。")) return;
+      if (!validateInput(kanjiFirstName, nameRegex, "名は漢字または英語で入力してください。")) return;
+      if (!validateInput(kanjiLastName, nameRegex, "姓は漢字または英語で入力してください。")) return;
       if (!validateInput(furikanaLastName, katakanaRegex, "セイはカタカナで入力してください。")) return;
       if (!validateInput(furikanaFirstName, katakanaRegex, "メイはカタカナで入力してください。")) return;
       if (!validateInput(email, emailRegex, "有効なメールアドレスを入力してください。")) return;
@@ -182,13 +237,21 @@ document.addEventListener("DOMContentLoaded", () => {
   const backBtn = document.getElementById("backToStep1");
   if (backBtn) {
     backBtn.addEventListener("click", function () {
+      renderFileList();
       progressItems.forEach((item) => item.classList.remove("is-active"));
       progressItems[0].classList.add("is-active");
       document.getElementById("step2").style.display = "none";
       document.getElementById("step1").style.display = "block";
     });
   }
-
+  // 삭제 버튼 동작 (2단계)
+  fileNameConfirmList.addEventListener("click", function (e) {
+    if (e.target.classList.contains("remove-btn")) {
+      const index = parseInt(e.target.getAttribute("data-index"));
+      selectedFiles.splice(index, 1);
+      renderFileList();
+    }
+  });
   // 전화번호 입력 포맷 처리
   const phoneInput = document.getElementById("userPhone");
   if (phoneInput) {
@@ -197,6 +260,13 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     phoneInput.addEventListener("blur", function () {
       let phoneValue = this.value.replace(/\D/g, "");
+         // "000-0000-0000" 형식 체크
+      if (phoneValue === "00000000000"|| phoneValue ==="0000000000") {
+        console.log(phoneValue)
+        alert("電電話番号の入力に誤りがあります。ご確認ください。");
+        this.value = ""; // 입력값 초기화
+        return;
+      }
       if (phoneValue.startsWith("03") || phoneValue.startsWith("06")) {
         this.value = phoneValue.replace(/(\d{2})(\d{4})(\d{4})/, "$1-$2-$3");
       } else if (phoneValue.length === 11) {
@@ -208,11 +278,20 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+  function showLoading() {
+    document.getElementById("loadingContainer").style.display = "flex";
+  }
+
+  function hideLoading() {
+    document.getElementById("loadingContainer").style.display = "none";
+  }
 
   // 2단계 → 3단계 메일 발송
   const step3Btn = document.getElementById("goToStep3");
   if (step3Btn) {
     step3Btn.addEventListener("click", function () {
+      showLoading();
+
       const formData = new FormData();
       formData.append("_wpcf7", "108");
       formData.append("_wpcf7_version", "6.0.6");
@@ -235,13 +314,10 @@ document.addEventListener("DOMContentLoaded", () => {
       // 파일 첨부 (selectedFiles 배열 기준)
       let index = 1; // index를 1로 초기화
       if (selectedFiles.length > 0) {
-        console.log(selectedFiles.length);
         for (let i = 0; i < selectedFiles.length && i < 10; i++) {
           const file = selectedFiles[i];
           formData.append("file-attachment" + index, file); // 배열 형식으로 첨부
-          console.log(formData.values);
           index++; // index를 1씩 증가시킴
-          console.log(formData.values);
         }
       }
 
@@ -256,6 +332,7 @@ document.addEventListener("DOMContentLoaded", () => {
         .then((response) => response.json())
         .then((data) => {
           if (data.status === "mail_sent") {
+            hideLoading();
             document.querySelector(".area-input-confirm").style.display = "none";
             const inputForm = document.querySelector(".area-input-form");
             if (inputForm) inputForm.style.display = "none";
@@ -274,10 +351,12 @@ document.addEventListener("DOMContentLoaded", () => {
               behavior: "smooth",
             });
           } else {
+            hideLoading();
             alert("エラーが発生しました。内容を確認してください。");
           }
         })
         .catch((error) => {
+          hideLoading();
           console.error("送信エラー:", error);
           alert("送信に失敗しました。再度試してください。");
         });
