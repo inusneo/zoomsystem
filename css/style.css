@@ -100,7 +100,6 @@ input,
 button,
 select,
 textarea {
-  -webkit-border-radius: 0;
   border-radius: 0;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -204,6 +203,7 @@ body.is-active {
 .wrap {
   overflow-x: hidden;
   width: 100%;
+  height: 100%;
   min-width: 1140px;
 }
 
@@ -240,6 +240,11 @@ img {
   pointer-events: none;
 }
 
+p::-moz-selection {
+  background-color: var(--skyblue);
+  color: var(--white);
+}
+
 p::selection {
   background-color: var(--skyblue);
   color: var(--white);
@@ -252,7 +257,8 @@ p::selection {
   width: 100%;
   height: 90px;
   background-color: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
   z-index: 30;
   transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
@@ -533,6 +539,21 @@ p::selection {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 50;
+}
+
+.bridge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed; /* 화면 기준으로 고정 */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  z-index: 9999;
 }
 
 /* 테블릿 가로, 테블릿 세로 (해상도 768px ~ 1139px) */
@@ -2301,7 +2322,9 @@ form + .box-btn {
   width: 0;
   height: 0;
   clip: rect(0, 0, 0, 0);
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
 }
 .input-checkbox input[type=checkbox]:checked + .label-terms::before {
   background-image: url(../img/icon_checked.svg);
@@ -2396,7 +2419,8 @@ form + .box-btn {
   padding: 0 30px;
   border: 1px solid var(--skyblue);
   box-shadow: 0 5px 12px 0px var(--skyblue);
-  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
 }
 .card-opaque_item:not(:first-child, :last-child) {
   background-color: rgba(29, 81, 139, 0.3);
@@ -2498,8 +2522,7 @@ form + .box-btn {
   display: none;
   width: 100%;
   color: var(--gray);
-  border: 1px solid var(--gray-light);
-  border-top: none;
+  border-bottom: 1px solid var(--gray-light);
 }
 .accordion_list > li {
   display: flex;
@@ -3288,4 +3311,4 @@ form + .box-btn {
   .accordion_list-sub-skill_lang {
     padding-left: 7px;
   }
-}
+}/*# sourceMappingURL=style.css.map */

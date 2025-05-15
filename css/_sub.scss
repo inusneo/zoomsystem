@@ -891,8 +891,7 @@
     display: none;
     width: 100%;
     color: var(--gray);
-    border: 1px solid var(--gray-light);
-    border-top: none;
+    border-bottom: 1px solid var(--gray-light);
   }
   &_list {
     > li {

@@ -30,6 +30,7 @@ body.is-active {
 .wrap {
   overflow-x: hidden;
   width: 100%;
+  height: 100%;
   min-width: 1140px;
 }
 
@@ -398,6 +399,22 @@ p::selection {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: #{map-get($z-indexes, popup)};
+}
+
+// Bridge - loading
+.bridge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed; /* 화면 기준으로 고정 */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  z-index: 9999;
 }
 
 /* 테블릿 가로, 테블릿 세로 (해상도 768px ~ 1139px) */
