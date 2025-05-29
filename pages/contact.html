@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>Contact | Zoomsystem</title>
+    <link rel="stylesheet" type="text/css" href="../css/swiper.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+  </head>
+  <body>
+    <!-- Skip Navi -->
+    <div id="skipNavi" class="skip_navigator"><a href="#container">본문 바로가기</a></div>
+    <!-- //Skip Navi -->
+
+    <!-- Wrap -->
+    <div class="wrap">
+      <!-- Header -->
+      <header id="header" class="header">
+        <div class="header_inner">
+          <h1 class="logo"><a href="#main"><span class="blind">ZOOM SYSTEM</span></a></h1>
+          <nav class="gnav">
+            <ul class="gnav_list">
+              <li>
+                <a href="/company" target="_self" class="gnav_link">COMPANY</a>
+                <ul class="gnav_sublist">
+                  <li><a href="/company#about">ABOUT US</a></li>
+                  <li>
+                    <a href="/company#three">THREE<br />PHILOSOPHIES</a>
+                  </li>
+                  <li><a href="/company#ceo">CEO MESSAGE</a></li>
+                  <li><a href="/company#prof">COMPANY PROF.</a></li>
+                  <li><a href="/company#access">ACCESS</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="/business" target="_self" class="gnav_link">BUSINESS</a>
+                <ul class="gnav_sublist">
+                  <li><a href="/business#our">OUR BUSINESS</a></li>
+                  <li>
+                    <a href="/business#competitive">COMPETITIVE<br />EDGE</a>
+                  </li>
+                  <li>
+                    <a href="/business#performance">PERFORMANCE<br />OVERVIEW</a>
+                  </li>
+                </ul>
+              </li>
+              <li><a href="/news" target="_self" class="gnav_link">NEWS</a></li>
+              <li><a href="/recruit" target="_self" class="gnav_link">RECRUIT</a></li>
+              <li><a href="/contact" target="_self" class="gnav_link">CONTACT</a></li>
+            </ul>
+          </nav>
+          <button type="button" class="btn_lang"><span>JPN</span></button>
+          <!-- btn_hamburger is for mobile -->
+          <button type="button" class="btn_hamburger" aria-label="Menu" aria-controls="drawer">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </button>
+        </div>
+      </header>
+      <!-- //Header -->
+
+      <!-- Drawer : Only for Mobile -->
+      <div class="drawer" id="drawer">
+        <div class="area_top">
+          <button type="button" class="btn_lang"><span>JPN</span></button>
+          <button type="button" class="btn_close"><span class="blind">Close drawer</span></button>
+        </div>
+        <nav class="mnav">
+          <ul class="mnav_list">
+            <li>
+              <a href="/company" class="mnav_title" target="_self">COMPANY</a>
+              <ul class="mnav_sublist">
+                <li><a href="/company#about">ABOUT US</a></li>
+                <li><a href="/company#three">THREE PHILOSOPHIES</a></li>
+                <li><a href="/company#ceo">CEO MESSAGE</a></li>
+                <li><a href="/company#prof">COMPANY PROF.</a></li>
+                <li><a href="/company#access">ACCESS</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="/business" class="mnav_title" target="_self">BUSINESS</a>
+              <ul class="mnav_sublist">
+                <li><a href="/business#our">OUR BUSINESS</a></li>
+                <li><a href="/business#competitive">COMPETITIVE EDGE</a></li>
+                <li><a href="/business#performance">PERFORMANCE OVERVIEW</a></li>
+              </ul>
+            </li>
+            <li><a href="/news" class="mnav_title" target="_self">NEWS</a></li>
+            <li><a href="/recruit" class="mnav_title" target="_self">RECRUIT</a></li>
+            <li><a href="/contact" class="mnav_title" target="_self">CONTACT</a></li>
+          </ul>
+        </nav>
+      </div>
+      <!-- //Drawer : Only for Mobile -->
+
+      <main id="main" class="main">
+        <section id="contact" class="top_visual top_visual-contact">
+          <div class="inner">
+            <h2 class="title">CONTACT</h2>
+            <p class="title-sub">その一言が、新しいプロジェクトの始まりに</p>
+          </div>
+        </section>
+
+        <section class="content-sub content-sub_top">
+          <div class="inner">
+            <h3 class="title">お問い合わせ</h3>
+            <p class="description">お問い合わせ事項を様式に合わせて作成して提出してください。</p>
+            <ul class="progress">
+              <li class="progress_item is-active"><span>1.入力</span></li>
+              <li class="progress_item"><span>2.確認</span></li>
+              <li class="progress_item"><span>3.完了</span></li>
+            </ul>
+            <!-- S: 1단계 문의사항 입력 영역 --->
+            <div id="step1" class="area-input">
+              <div class="box-text">
+                <strong class="text-required">印は必須入力項目です。</strong>
+              </div>
+              <form action="/contact" method="POST">
+                <ul class="input_list">
+                  <li class="input_item input_item-single">
+                    <label for="selectType" class="label-title label-required">お問い合わせ内容</label>
+                    <select id="selectType" class="input input-select" aria-invalid="false" name="inquiry-type">
+                      <option value="" disabled selected>お問い合わせをお選びください</option>
+                      <option value="新卒採用について">新卒採用について</option>
+                      <option value="キャリア採用について">キャリア採用について</option>
+                      <option value="パートナー応募について">パートナー応募について</option>
+                      <option value="その他">その他</option>
+                    </select>
+                  </li>
+                  <li class="input_item">
+                    <label for="insertName" class="label-title label-required">お名前</label>
+                    <div class="box-input">
+                      <div class="input-set">
+                        <span class="name">姓</span>
+                        <input id="insertLastNamekanji" type="text" placeholder="例）山田" class="input input-required" />
+                      </div>
+                      <div class="input-set">
+                        <span class="name">名</span>
+                        <input id="insertFirstNamekanji" type="text" placeholder="例）太郎" class="input input-required" />
+                      </div>
+                    </div>
+                  </li>
+                  <li class="input_item">
+                    <label for="insertName2" class="label-title label-required">お名前(フリカナ)</label>
+                    <div class="box-input">
+                      <div class="input-set">
+                        <span class="name">セイ</span>
+                        <input id="insertLastNamefuri" type="text" placeholder="例）ヤマダ" class="input input-required" />
+                      </div>
+                      <div class="input-set">
+                        <span class="name">メイ</span>
+                        <input id="insertfirstNamefuri" type="text" placeholder="例）タロウ" class="input input-required" />
+                      </div>
+                    </div>
+                  </li>
+                  <li class="input_item input_item-single">
+                    <label for="schoolName" class="label-title">企業名・学校名</label>
+                    <input id="schoolName" type="text" placeholder="例）OOOO学校" class="input input-full" />
+                  </li>
+                  <li class="input_item input_item-single">
+                    <label for="affiliation" class="label-title">所属部署・学部 学科 学年</label>
+                    <input id="affiliation" type="text" placeholder="例）情報工学科" class="input input-full" />
+                  </li>
+                  <li class="input_item input_item-single">
+                    <label for="userEmail" class="label-title label-required">メールアドレス</label>
+                    <input id="userEmail" type="text" placeholder="例）zoom@zoomsys.co.jp" class="input input-required input-full" />
+                  </li>
+                  <li class="input_item input_item-single">
+                    <label for="userPhone" class="label-title label-required">電話番号</label>
+                    <input id="userPhone" type="text" placeholder="例）070-1234-5678（ハイフンは自動で挿入されます）" class="input input-required input-full" />
+                  </li>
+                  <li id="dropZone" class="input_item">
+                    <strong>添付ファイル</strong>
+                    <!-- 숨겨진 파일 input -->
+                    <div class="box-btn-file">
+                      <div class="box-left">
+                                    <input id="uploadFile" type="file" accept="image/*,
+                                    .doc,.docx,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,
+                                    .xls,.xlsx,application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,
+                                    .ppt,.pptx,application/vnd.ms-powerpoint,application/vnd.openxmlformats-officedocument.presentationml.presentation,
+                                    .hwp,application/x-hwp,
+                                    .pdf,application/pdf" multiple style="display: none" />
+                        <!-- 커스텀 버튼 -->
+                        <button type="button" id="customUploadBtn" class="btn-outline btn-outline-file">ファイルを選択</button>
+                        <!-- 삭제 버튼 -->
+                        <button type="button" id="clearFilesBtn" class="btn-outline btn-outline-delete">全て削除</button>
+                      </div>
+                      <!-- 파일 이름 표시 -->
+                      <ul id="fileNameConfirmList" class="file_list">
+                        <li class="file_item">
+                          <div class="file_name">
+                            <span>添付ファイルなし添付ファイルなし添付ファイルなしなし添付ファイルなし添付ファイルなし</span>
+                          </div>
+                          <button type="button" id="clearFilesBtn" class="btn-outline btn-outline-delete-small">削除</button>
+                        </li>
+                        <li class="file_item">
+                          <div class="file_name">
+                            <span>添付ファイルなし添付ファイルなし添付ファイルなしなし添付ファイルなし添付ファイルなし</span>
+                          </div>
+                          <button type="button" id="clearFilesBtn" class="btn-outline btn-outline-delete-small">削除</button>
+                        </li>
+                        <li class="file_item">
+                          <div class="file_name">
+                            <span>添付ファイルなし添付ファイルなし添付ファイルなしなし添付ファイルなし添付ファイルなし</span>
+                          </div>
+                          <button type="button" id="clearFilesBtn" class="btn-outline btn-outline-delete-small">削除</button>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="input_item input_item-column">
+                    <label for="userDetail" class="label-title label-required">お問い合わせ内容の詳細</label>
+                    <textarea id="userDetail" placeholder="例)あえいおう..." maxlength="400" class="input-textarea input-required"></textarea>
+                  </li>
+                  <li class="input_item input_item-column">
+                    <strong class="label-required">ププライバシーポリシーに同意する</strong>
+                            <p class="terms"><strong>ZOOM SYSTEM株式会社</strong>（以下、「当社」といいます。）は、本ウェブサイト上で提供するサービス（以下、「本サービス」といいます。）における、ユーザーの個人情報の取扱いについて、以下の通りプライバシーポリシーを定め、これを公表し、遵守します。<br><br>
+                                <strong>第1条（関係法令などの遵守）</strong><br><br>
+                                当社は、個人情報保護法その他の関係法令、ガイドライン及び本プライバシーポリシーを遵守し、個人情報を適切に取り扱います。<br><br><br>
+                                <strong>第2条（個人情報の適法・適正な取得）</strong><br><br>
+                                当社は、個人情報を取得する際には、利用目的を公表または通知し（本プライバシーポリシーによる公表を含みます。）、また、直接ご本人からの書面（電磁的記録を含みます。）に記載された個人情報を取得する場合にはあらかじめ利用目的を明示し、適正な手段によって取得いたします。ただし、個人情報保護法その他の法令で特段の定めがある場合を除きます。<br><br><br>
+                                <strong>第3条（個人情報の利用目的）</strong><br><br>
+                                当社が個人情報を収集・利用する目的は、以下のとおりです。<br><br>
+                                <span style="display: block; margin-left: 2em;">1. 当社サービスの提供・運営のため</span><br>
+                                <span style="display: block; margin-left: 2em;">2. 各種お問い合わせなどへの対応のため</span><br>
+                                <span style="display: block; margin-left: 2em;">3. ユーザーが利用中のサービスの案内を送付するため</span><br>
+                                <span style="display: block; margin-left: 2em;">4. メンテナンス、重要なお知らせなど必要に応じたご連絡のため</span><br>
+                                <span style="display: block; margin-left: 2em;">5. ユーザーにご自身の登録情報の閲覧や変更、削除、ご利用状況の閲覧を行っていただくため</span><br>
+                                <span style="display: block; margin-left: 2em;">6. その他、上記目的に付随する業務の遂行のため</span><br><br><br>
+                                <strong>第4条（個人データの管理）</strong><br><br>
+                                当社は、個人データについて、漏えい、滅失又は毀損の防止など、その管理のために必要かつ適切な安全管理措置を講じます。安全管理措置の内容は、法令に基づき、本人の求めに応じて遅滞なく回答いたします。個人データを取り扱う従業者に対して、必要かつ適切な監督を行います。個人データにつき、漏えい、滅失、毀損その他の個人データの安全の確保に係る事態であって個人の権利利益を害するおそれが大きいものが生じたときは、法令の定めに従い、必要に応じて、当該事態について個人情報保護委員会及び本人に対して通知を行います。<br><br><br>
+                                <strong>第5条（個人情報の第三者提供）</strong><br><br>
+                                当社は、あらかじめ同意がある場合又は個人情報保護法その他の法令で認められている場合を除き、個人データを第三者に提供いたしません。<br><br><br>
+                                <strong>第6条（個人情報の訂正および削除）</strong><br><br>
+                                <span style="display: block; margin-left: 2em;">1. ユーザーは、当社の保有する自己の個人情報が誤った情報である場合には、当社が定める手続きにより、当社に対して個人情報の訂正、追加または削除（以下、「訂正など」といいます。）を請求することができます。</span><br>
+                                <span style="display: block; margin-left: 2em;">2. 当社は、ユーザーから前項の請求を受けてその請求に応じる必要があると判断した場合には、遅滞なく、当該個人情報の訂正などを行うものとします。</span><br>
+                                <span style="display: block; margin-left: 2em;">3. 当社は、前項の規定に基づき訂正などを行った場合、または訂正などを行わない旨の決定をしたときは遅滞なく、これをユーザーに通知します。</span><br><br><br>
+                                <strong>第7条（個人情報の利用停止など）</strong><br><br>
+                                <span style="display: block; margin-left: 2em;">1. 当社は、本人から個人情報が、利用目的の範囲を超えて取り扱われているという理由、または不正の手段により取得されたものであるという理由により、その利用の停止または消去（以下、「利用停止など」といいます。）を求められた場合には、遅滞なく必要な調査を行います。</span><br>
+                                <span style="display: block; margin-left: 2em;">2. 前項の調査結果に基づき、その請求に応じる必要があると判断した場合には、遅滞なく、当該個人情報の利用停止などを行います。</span><br>
+                                <span style="display: block; margin-left: 2em;">3. 当社は、前項の規定に基づき利用停止などを行った場合、または利用停止などを行わない旨の決定をしたときは、遅滞なく、これをユーザーに通知します。</span><br><br><br>
+                                <strong>第8条（クッキーについて）</strong><br><br>
+                                当サイトでは、ウェブサイトの利便性向上を目的にクッキーを利用しています。クッキーはサーバーから利用者に送信されブラウザに保存される情報です。クッキーは無効にすることもできますが、その結果サイト機能の一部またはすべてが利用できなくなる可能性があります。<br><br><br>
+                                <strong>第9条（プライバシーポリシーの変更）</strong><br><br>
+                                <span style="display: block; margin-left: 2em;">1. 本ポリシーの内容は、法令その他本ポリシーに別段の定めのある事項を除いて、ユーザーに通知することなく、変更することができるものとします。</span><br>
+                                <span style="display: block; margin-left: 2em;">2. 当社が別途定める場合を除いて、変更後のプライバシーポリシーは、本ウェブサイトに掲載したときから効力を生じるものとします。</span><br>
+                    </p>
+                    <div class="input-checkbox">
+                      <input id="userTerms" type="checkbox" />
+                      <label for="userTerms" class="label-terms">
+                                    <span class="text">上記内容に同意しました</span>
+                      </label>
+                    </div>
+                  </li>
+                </ul>
+              </form>
+              <div class="box-btn">
+                <button id="goToStep2" type="button" class="btn-square">確認画面に進む</button>
+              </div>
+            </div>
+            <!-- E: 1단계 문의사항 입력 영역 --->
+
+            <!-- S: 2단계 확인 영역 --->
+            <div id="step2" class="area-input area-input-confirm" style="display: none">
+              <div id="loadingContainer" class="bridge" style="display: none;">
+                  <img src="../img/loading.gif" alt="loading" style="width: 50px; height: 50px;" />
+              </div>
+              <div class="box-text">
+                <strong class="text-required">印は必須入力項目です。</strong>
+              </div>
+              <ul class="input_list">
+                <li class="input_item input_item-single">
+                  <strong class="label-required">お問い合わせ内容</strong>
+                  <span class="input_text1">お問い合わせをお選びください</span>
+                </li>
+                <li class="input_item input_item-single">
+                  <strong class="label-required">お名前</strong>
+                  <span class="input_text2"></span>
+                </li>
+                <li class="input_item input_item-single">
+                  <strong class="label-required">お名前(フリカナ)</strong>
+                  <span class="input_text3"></span>
+                </li>
+                <li class="input_item input_item-single">
+                  <strong>企業名・学校名</strong>
+                  <span class="input_text4"></span>
+                </li>
+                <li class="input_item input_item-single">
+                  <strong>所属部署・学部 学科 学年</strong>
+                  <span class="input_text5"></span>
+                </li>
+                <li class="input_item input_item-single">
+                  <strong class="label-required">メールアドレス</strong>
+                  <span class="input_text6"></span>
+                </li>
+                <li class="input_item input_item-single">
+                  <strong class="label-required">電話番号</strong>
+                  <span class="input_text7"></span>
+                </li>
+                <li class="input_item input_item-single">
+                  <strong>添付ファイル</strong>
+                    <ul class="input_text8">
+                      <span>添付ファイルなし</span>
+                    </ul>
+                </li>
+                <li class="input_item">
+                  <strong class="label-required">お問い合わせ内容の詳細</strong>
+                  <span class="input_text9"></span>
+                </li>
+                <li class="input_item input_item-column">
+                  <strong class="label-required">ププライバシーポリシーに同意する</strong>
+                        <p class="terms"><strong>ZOOM SYSTEM株式会社</strong>（以下、「当社」といいます。）は、本ウェブサイト上で提供するサービス（以下、「本サービス」といいます。）における、ユーザーの個人情報の取扱いについて、以下の通りプライバシーポリシーを定め、これを公表し、遵守します。<br><br>
+                            <strong>第1条（関係法令などの遵守）</strong><br><br>
+                            当社は、個人情報保護法その他の関係法令、ガイドライン及び本プライバシーポリシーを遵守し、個人情報を適切に取り扱います。<br><br><br>
+                            <strong>第2条（個人情報の適法・適正な取得）</strong><br><br>
+                            当社は、個人情報を取得する際には、利用目的を公表または通知し（本プライバシーポリシーによる公表を含みます。）、また、直接ご本人からの書面（電磁的記録を含みます。）に記載された個人情報を取得する場合にはあらかじめ利用目的を明示し、適正な手段によって取得いたします。ただし、個人情報保護法その他の法令で特段の定めがある場合を除きます。<br><br><br>
+                            <strong>第3条（個人情報の利用目的）</strong><br><br>
+                            当社が個人情報を収集・利用する目的は、以下のとおりです。<br><br>
+                            <span style="display: block; margin-left: 2em;">1. 当社サービスの提供・運営のため</span><br>
+                            <span style="display: block; margin-left: 2em;">2. 各種お問い合わせなどへの対応のため</span><br>
+                            <span style="display: block; margin-left: 2em;">3. ユーザーが利用中のサービスの案内を送付するため</span><br>
+                            <span style="display: block; margin-left: 2em;">4. メンテナンス、重要なお知らせなど必要に応じたご連絡のため</span><br>
+                            <span style="display: block; margin-left: 2em;">5. ユーザーにご自身の登録情報の閲覧や変更、削除、ご利用状況の閲覧を行っていただくため</span><br>
+                            <span style="display: block; margin-left: 2em;">6. その他、上記目的に付随する業務の遂行のため</span><br><br><br>
+                            <strong>第4条（個人データの管理）</strong><br><br>
+                            当社は、個人データについて、漏えい、滅失又は毀損の防止など、その管理のために必要かつ適切な安全管理措置を講じます。安全管理措置の内容は、法令に基づき、本人の求めに応じて遅滞なく回答いたします。個人データを取り扱う従業者に対して、必要かつ適切な監督を行います。個人データにつき、漏えい、滅失、毀損その他の個人データの安全の確保に係る事態であって個人の権利利益を害するおそれが大きいものが生じたときは、法令の定めに従い、必要に応じて、当該事態について個人情報保護委員会及び本人に対して通知を行います。<br><br><br>
+                            <strong>第5条（個人情報の第三者提供）</strong><br><br>
+                            当社は、あらかじめ同意がある場合又は個人情報保護法その他の法令で認められている場合を除き、個人データを第三者に提供いたしません。<br><br><br>
+                            <strong>第6条（個人情報の訂正および削除）</strong><br><br>
+                            <span style="display: block; margin-left: 2em;">1. ユーザーは、当社の保有する自己の個人情報が誤った情報である場合には、当社が定める手続きにより、当社に対して個人情報の訂正、追加または削除（以下、「訂正など」といいます。）を請求することができます。</span><br>
+                            <span style="display: block; margin-left: 2em;">2. 当社は、ユーザーから前項の請求を受けてその請求に応じる必要があると判断した場合には、遅滞なく、当該個人情報の訂正などを行うものとします。</span><br>
+                            <span style="display: block; margin-left: 2em;">3. 当社は、前項の規定に基づき訂正などを行った場合、または訂正などを行わない旨の決定をしたときは遅滞なく、これをユーザーに通知します。</span><br><br><br>
+                            <strong>第7条（個人情報の利用停止など）</strong><br><br>
+                            <span style="display: block; margin-left: 2em;">1. 当社は、本人から個人情報が、利用目的の範囲を超えて取り扱われているという理由、または不正の手段により取得されたものであるという理由により、その利用の停止または消去（以下、「利用停止など」といいます。）を求められた場合には、遅滞なく必要な調査を行います。</span><br>
+                            <span style="display: block; margin-left: 2em;">2. 前項の調査結果に基づき、その請求に応じる必要があると判断した場合には、遅滞なく、当該個人情報の利用停止などを行います。</span><br>
+                            <span style="display: block; margin-left: 2em;">3. 当社は、前項の規定に基づき利用停止などを行った場合、または利用停止などを行わない旨の決定をしたときは、遅滞なく、これをユーザーに通知します。</span><br><br><br>
+                            <strong>第8条（クッキーについて）</strong><br><br>
+                            当サイトでは、ウェブサイトの利便性向上を目的にクッキーを利用しています。クッキーはサーバーから利用者に送信されブラウザに保存される情報です。クッキーは無効にすることもできますが、その結果サイト機能の一部またはすべてが利用できなくなる可能性があります。<br><br><br>
+                            <strong>第9条（プライバシーポリシーの変更）</strong><br><br>
+                            <span style="display: block; margin-left: 2em;">1. 本ポリシーの内容は、法令その他本ポリシーに別段の定めのある事項を除いて、ユーザーに通知することなく、変更することができるものとします。</span><br>
+                            <span style="display: block; margin-left: 2em;">2. 当社が別途定める場合を除いて、変更後のプライバシーポリシーは、本ウェブサイトに掲載したときから効力を生じるものとします。</span><br>
+                  </p>
+                  <div class="input-checkbox is-complete">
+                    <input id="userTerms" type="checkbox" disabled />
+                    <label for="userTerms" class="label-terms">
+                                <span class="text">上記内容に同意しました</span>
+                    </label>
+                  </div>
+                </li>
+              </ul>
+              <div class="box-btn box-btn-flex">
+                <button id="backToStep1" type="button" class="btn-square">戻る</button>
+                <button id="goToStep3" type="submit" class="btn-square">完了画面に進む</button>
+              </div>
+            </div>
+            <!-- E: 2단계 확인 영역 --->
+
+            <!-- S: 3단계 완료 영역 --->
+            <div class="area-message" style="display: none">
+              <strong class="message">提出が正常に完了しました。<br />ありがとうございます。</strong>
+              <div class="box-btn">
+                <a href="/contact" class="btn-square">最初に戻る</a>
+              </div>
+            </div>
+            <!-- E: 3단계 완료 영역 --->
+          </div>
+        </section>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer_inner">
+          <h3 class="footer_logo">ZOOM SYSTEM 株式会社</h3>
+          <ul class="list_connect">
+            <li>TEL : <a href="tel:03-6808-2676">03-6808-2676</a></li>
+            <li>E-MAIL :<a href="mailto:zoom@zoomsys.co.jp">zoom@zoomsys.co.jp</a></li>
+          </ul>
+          <p class="address">〒103-0025 東京都中央区日本橋茅場町2-7-10 金子梅所ビル2階</p>
+          <span class="copyright">&copy; Zoom System Co.,Ltd 2016. All rights reserved.</span>
+        </div>
+      </footer>
+      <!-- //Footer -->
+
+      <!-- Top Scroll Button -->
+      <aside class="scroll_top">
+        <button id="scrollTopBtn" class="scroll_top_btn"><span class="blind">Scroll to top</span></button>
+      </aside>
+      <!-- //Top Scroll Button -->
+    </div>
+    <!-- //Wrap -->
+
+    <!-- Dimmed -->
+    <div id="dimmed" class="dimmed"></div>
+
+    <!-- Script -->
+    <script src="../js/jquery.js"></script>
+    <script src="../js/swiper.min.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="../js/contact.js"></script>
+
+    <style>
+      .case-view {
+        opacity: 0.3;
+        transition: opacity 0.2s;
+        overflow: hidden;
+        position: fixed;
+        top: 100px;
+        right: 30px;
+        z-index: 1000;
+        width: 50vw;
+        max-width: 260px;
+        padding: 10px;
+        border-radius: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        background: rgba(0, 0, 0, 0.8);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5px);
+      }
+
+      .case-view:hover {
+        opacity: 1;
+      }
+
+      .case-view:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+        opacity: 0.4;
+        background-color: rgba(0, 0, 0, 0.5);
+        content: "";
+      }
+
+      .case-view button {
+        display: block;
+        color: #fff;
+        text-align: left;
+      }
+
+      .btn-case-view {
+        display: block;
+        width: 100%;
+        padding: 5px 10px;
+        border-radius: 4px;
+        font-size: 14px;
+        font-weight: 700;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        background: rgba(255, 255, 255, 0.2);
+        transition: background-color 0.2s;
+      }
+
+      .btn-case-view:hover {
+        background: rgba(255, 255, 255, 0.6);
+      }
+
+      .case-view-inner {
+        overflow: hidden;
+        overflow-y: auto;
+        max-height: 260px;
+        max-width: 240px;
+        margin-top: 10px;
+        padding-right: 10px;
+      }
+
+      .case-view-inner::-webkit-scrollbar {
+        display: none;
+      }
+
+      .case-view-inner button {
+        margin-top: 8px;
+        font-size: 12px;
+        word-break: keep-all;
+      }
+
+      .case-view-inner button:not(:disabled):hover {
+        text-decoration: underline;
+      }
+
+      .case-view-inner button:disabled {
+        text-decoration: line-through;
+        color: #555;
+      }
+    </style>
+    <div class="case-view">
+      <button
+        type="button"
+        class="btn-case-view"
+        onclick="document.querySelector('.case-view-inner').style.display=((document.querySelector('.case-view-inner').style.display!='none') ? 'none' : 'block');"
+      >
+        CASE VIEW
+      </button>
+      <div class="case-view-inner" style="display: none">
+        <button type="button" class="btn-case">[화면] 1단계: 입력</button>
+        <button type="button" class="btn-case">[화면] 2단계: 확인</button>
+        <button type="button" class="btn-case">[화면] 3단계: 완료</button>
+      </div>
+    </div>
+    <script>
+      const $elProgress = $(".progress_item").index();
+
+      $(".case-view .btn-case:eq(0)").click(function () {
+        $(".progress > li").removeClass("is-active");
+        $(".area-input-confirm, .area-message").hide();
+        $(".progress > li:eq(0)").addClass("is-active");
+        $(".progress + .area-input").show();
+      });
+
+      $(".case-view .btn-case:eq(1)").click(function () {
+        $(".progress > li").removeClass("is-active");
+        $(".progress + .area-input, .area-message").hide();
+        $(".progress > li:eq(1)").addClass("is-active");
+        $(".area-input-confirm").show();
+      });
+
+      $(".case-view .btn-case:eq(2)").click(function () {
+        $(".progress > li").removeClass("is-active");
+        $(".progress + .area-input, .area-input-confirm").hide();
+        $(".progress > li:eq(2)").addClass("is-active");
+        $(".area-message").show();
+      });
+    </script>
+  </body>
+</html>
