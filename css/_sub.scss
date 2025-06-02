@@ -118,12 +118,6 @@
       height: 400px;
     }
   }
-  &_ceo {
-    .thumbnail {
-      margin-top: 50px;
-      height: 340px;
-    }
-  }
   &_competitive {
     .bg-full {
       display: flex;
@@ -149,14 +143,45 @@
     color: var(--gray);
     font-size: 1.5rem;
     font-weight: normal;
-
-    strong {
-      font-size: 2.5rem;
-    }
   }
   .bg-full {
     width: 100%;
-    height: 850px;
+    height: 650px;
+  }
+  .area_description {
+    margin-top: 10px;
+    color: var(--black);
+
+    .title_sub {
+      font-size: 2rem;
+      font-weight: 900;
+      line-height: 1;
+    }
+    .description_sub {
+      margin-top: 30px;
+      color: var(--gray);
+      font-size: 1.5rem;
+      line-height: 1.4;
+    }
+  }
+  .area_contents {
+    display: flex;
+    margin-top: 50px;
+
+    .thumbnail {
+      flex: 0 0 410px;
+      width: 410px;
+      height: 580px;
+      margin-right: 50px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      background-image: url(../img/img_sub_company_ceo_mo.jpg);
+    }
+    .description {
+      margin: 0;
+      font-size: 1.25rem;
+    }
   }
   .thumbnail {
     position: relative;
@@ -164,25 +189,15 @@
     &-full {
       width: 100%;
     }
-
-    .text-ceo {
-      position: absolute;
-      width: 520px;
-      top: 50%;
-      right: 30px;
-      transform: translateY(-50%);
-      color: var(--white);
-      font-size: 1.25rem;
-      font-weight: 700;
-    }
   }
-  .box-text {
+  .text-closing {
+    display: block;
     margin-top: 40px;
     text-align: right;
     color: var(--gray);
-    font-size: 1.5rem;
+    font-size: 1.25rem;
 
-    .text-company {
+    em {
       font-weight: 700;
     }
   }
@@ -393,7 +408,7 @@
     align-items: center;
     flex-wrap: wrap;
     width: 100%;
-    margin-top: 20px;
+    margin-top: 60px;
     text-align: left;
 
     &-center { 
@@ -771,7 +786,7 @@
     align-items: center;
     gap: 30px;
     width: 555px;
-    height: 274px;
+    height: 124px;
     padding: 0 30px;
     border: 1px solid var(--skyblue);
     box-shadow: 0 5px 12px 0px var(--skyblue);
@@ -807,6 +822,7 @@
     }
   }
   &_years {
+    opacity: .6;
     flex: 0 0 135px;
     font-size: 3rem;
     font-weight: 900;
@@ -1025,20 +1041,6 @@
         }
       }
     }
-    &_ceo {
-      .thumbnail {
-        height: 36.46vw;
-
-        img {
-          height: 100%;
-        }
-
-        .text-ceo {
-          width: auto;
-          font-size: 1rem;
-        }
-      }
-    }
 
     .inner {
       max-width: 100%;
@@ -1047,13 +1049,27 @@
     .title {
       font-size: 3rem;
     }
+    .bg-full {
+      height: 850px;
+    }
     .description {
       margin-top: 30px;
       font-size: 1.25rem;
-
-      strong {
-        font-size: 2rem;
+    }
+    .area_contents {
+      .thumbnail {
+        flex: 0 0 350px;
+        width: 350px;
+        height: 450px;
+        margin-right: 30px;
       }
+      .description {
+        font-size: 1rem;
+      }
+    }
+    .text-closing {
+      margin-top: 20px;
+      font-size: 1rem;
     }
     .info {
       &_title {
@@ -1281,7 +1297,6 @@
   }
   .card-opaque_item {
     width: calc(100% - 100px);
-    height: 160px;
 
     &:nth-child(2) {
       margin-top: 0;
@@ -1410,25 +1425,6 @@
         height: 72vw;
       }
     }
-    &_ceo {
-      .thumbnail {
-        height: 64vw;
-        margin-top: 40px;
-
-        img {
-          height: 100%;
-        }
-
-        .text-ceo {
-          right: 10px;
-          top: initial;
-          bottom: -10px;
-          width: 200px;
-          font-size: 0.88rem;
-        }
-      }
-    }
-
     .inner {
       max-width: 100%;
       padding: 0 20px; 
@@ -1440,6 +1436,33 @@
       height: 505px;
       margin-top: 30px;
     }
+    .area_description {
+      margin-top: 5px;
+      .title_sub {
+        font-size: 1.25rem;
+      }
+      .description_sub {
+        margin-left: 0;
+        margin-top: 15px;
+        font-size: 0.88rem;
+      }
+    }
+    .area_contents {
+      flex-direction: column;
+      align-items: center;
+      margin-top: 30px;
+
+      .thumbnail {
+        flex: 0 0 auto;
+        width: 100%;
+        height: 300px;
+        margin-right: 0;
+      }
+      .description {
+        margin-top: 20px;
+        font-size: 0.88rem;
+      }
+    }
     .description {
       margin-top: 20px;
       font-size: 0.88rem;
@@ -1448,13 +1471,9 @@
         font-size: 1.38rem;
       }
     }
-    .box-text {
+    .text-closing {
       margin-top: 20px;
       font-size: 0.88rem;
-
-      .text-company {
-        font-size: 1rem;
-      }
     }
     .info {
       flex-direction: column;
